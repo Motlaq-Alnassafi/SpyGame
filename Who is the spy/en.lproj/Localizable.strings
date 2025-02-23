@@ -44,6 +44,10 @@
 "SuggestedTip1" = "Good opening question";
 "SpiesWin" = "Spies Win!";
 "RegularPlayersWin" = "Regular Players Win!";
+"PlayerRoles" = "Player Roles";
+"CustomPlayerNames" = "Custom Player Names";
+"HapticFeedback" = "Haptic Feedback";
+"SoundEffects" = "Sound Effects";
 
 
 

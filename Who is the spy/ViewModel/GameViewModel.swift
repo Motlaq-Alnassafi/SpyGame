@@ -8,6 +8,7 @@
 import Combine
 import Foundation
 import SwiftUICore
+import UIKit
 
 class GameViewModel: ObservableObject {
     @Published var players: [Player] = []
@@ -93,7 +94,9 @@ class GameViewModel: ObservableObject {
 
     func nextPlayer() {
         if hapticFeedback {
-            // Add haptic feedback here if desired
+            let feedbackGenerator = UIImpactFeedbackGenerator(style: .heavy)
+            feedbackGenerator.prepare()
+            feedbackGenerator.impactOccurred()
         }
 
         currentPlayerIndex += 1

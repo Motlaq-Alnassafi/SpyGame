@@ -41,8 +41,13 @@
 "SuggestedQuestions" = "الأسئلة المقترحة";
 "SuggestedQuestion1" = "ماذا يمكنك أن ترى من حولك؟";
 "SuggestedTip1" = "سؤال افتتاحي جيد";
-"SpiesWin" = "!فاز الجواسيس";
-"RegularPlayersWin" = "!فاز اللاعبون العاديون";
+"SpiesWin" = "فازوا الجواسيس!";
+"RegularPlayersWin" = "فازوا اللاعبون العاديون!";
+"PlayerRoles" = "أدوار اللاعبين";
+"CustomPlayerNames" = "إنشاء أسماء لاعبين مخصصة";
+"HapticFeedback" = "اهتزاز الجهاز";
+"SoundEffects" = "تأثيرات صوتية";
+
 
 //locations
 "Synagogue" = "معبد يهودي";

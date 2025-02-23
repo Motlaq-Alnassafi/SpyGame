@@ -40,7 +40,7 @@ struct GameFinishedView: View {
             }
             ScrollView {
                 VStack(alignment: .leading, spacing: 16) {
-                    Text("Player Roles")
+                    Text(NSLocalizedString("PlayerRoles", comment: "Player Roles"))
                         .font(.headline)
                         .foregroundColor(.white)
 

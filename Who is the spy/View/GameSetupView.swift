@@ -79,16 +79,16 @@ struct GameSetupView: View {
             .padding(.horizontal)
 
             VStack(spacing: 16) {
-                Toggle("Custom Player Names", isOn: $viewModel.customPlayerNames)
+                Toggle(NSLocalizedString("CustomPlayerNames", comment: "Custom Player Names"), isOn: $viewModel.customPlayerNames)
                     .toggleStyle(SwitchToggleStyle(tint: .indigo))
 
                 HStack {
-                    Toggle("Haptic Feedback", isOn: $viewModel.hapticFeedback)
+                    Toggle(NSLocalizedString("HapticFeedback", comment: "Haptic Feedback"), isOn: $viewModel.hapticFeedback)
                         .toggleStyle(SwitchToggleStyle(tint: .indigo))
 
                     Spacer()
 
-                    Toggle("Sound Effects", isOn: $viewModel.soundEffects)
+                    Toggle(NSLocalizedString("SoundEffects", comment: "Sound Effects"), isOn: $viewModel.soundEffects)
                         .toggleStyle(SwitchToggleStyle(tint: .indigo))
                 }
 //                                        SelectableOptionsView()
