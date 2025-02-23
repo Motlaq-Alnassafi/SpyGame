@@ -41,6 +41,14 @@
 "SuggestedQuestions" = "الأسئلة المقترحة";
 "SuggestedQuestion1" = "ماذا يمكنك أن ترى من حولك؟";
 "SuggestedTip1" = "سؤال افتتاحي جيد";
+"SuggestedQuestion2" = "ما الأصوات التي تسمعها عادةً؟";
+"SuggestedTip2" = "جو المكان";
+"SuggestedQuestion3" = "ما الأنشطة التي تحدث هنا؟";
+"SuggestedTip3" = "غرض المكان";
+"SuggestedQuestion4" = "من الذي تراه عادةً هنا؟";
+"SuggestedTip4" = "الزوار المعتادون";
+"SuggestedQuestion5" = "متى يكون هذا المكان أكثر ازدحامًا؟";
+"SuggestedTip5" = "الأنماط اليومية";
 "SpiesWin" = "فازوا الجواسيس!";
 "RegularPlayersWin" = "فازوا اللاعبون العاديون!";
 "PlayerRoles" = "أدوار اللاعبين";

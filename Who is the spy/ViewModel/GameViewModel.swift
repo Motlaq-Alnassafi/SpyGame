@@ -56,7 +56,7 @@ class GameViewModel: ObservableObject {
         for i in 0 ..< playerCount {
             let emoji = getUniqueEmoji()
             newPlayers.append(Player(
-                name: customPlayerNames ? "\(NSLocalizedString("Player", comment: "Player")) \(i + 1)" : "\(NSLocalizedString("Player", comment: "Player")) \(i + 1)",
+                name: customPlayerNames ? "\("Player".localized) \(i + 1)" : "\("Player".localized) \(i + 1)",
                 isSpy: false,
                 emoji: emoji
             ))
@@ -121,7 +121,7 @@ class GameViewModel: ObservableObject {
         gameState = .finished
         timer?.cancel()
         timer = nil
-        winnerRole = spyWins ? NSLocalizedString("SpiesWin", comment: "Spies Win!") : NSLocalizedString("RegularPlayersWin", comment: "Regular Players Win!")
+        winnerRole = spyWins ? "SpiesWin".localized : "RegularPlayersWin".localized
     }
 
     func startTimer() {
@@ -165,9 +165,9 @@ class GameViewModel: ObservableObject {
 
     func getPlayerRoleDescription(_ player: Player) -> String {
         if player.isSpy {
-            return "\(NSLocalizedString("YouAreTheSpy", comment: "You are the Spy!"))\n\n\(NSLocalizedString("FigureOutLocation", comment: "Try to figure out the location without being caught."))"
+            return "\("YouAreTheSpy".localized)\n\n\("FigureOutLocation".localized)"
         } else {
-            return "\(NSLocalizedString("Location", comment: "Location")): \(currentLocation?.name ?? "")\n\n\(NSLocalizedString("PlayerRoleDescription", comment: "Ask and answer questions without being too obvious!"))"
+            return "\("Location".localized): \(currentLocation?.name ?? "")\n\n\("PlayerRoleDescription".localized)"
         }
     }
 

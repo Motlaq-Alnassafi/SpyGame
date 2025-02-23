@@ -105,34 +105,34 @@ struct GamePlayView: View {
 
                     // Question suggestions
                     VStack(alignment: .leading, spacing: 16) {
-                        Text(NSLocalizedString("SuggestedQuestions", comment: "Suggested Questions"))
+                        Text("SuggestedQuestions".localized)
                             .font(.headline)
                             .foregroundColor(.white)
 
                         VStack(alignment: .leading, spacing: 12) {
                             QuestionSuggestion(
-                                question: NSLocalizedString("SuggestedQuestion1", comment: "What can you see around you?"),
-                                tip: NSLocalizedString("SuggestedTip1", comment: "Good opening question")
+                                question: "SuggestedQuestion1".localized,
+                                tip: "SuggestedTip1".localized
                             )
-
+                            
                             QuestionSuggestion(
-                                question: "What sounds do you typically hear?",
-                                tip: "Location atmosphere"
+                                question: "SuggestedQuestion2".localized,
+                                tip: "SuggestedTip2".localized
                             )
-
+                            
                             QuestionSuggestion(
-                                question: "What activities happen here?",
-                                tip: "Location purpose"
+                                question: "SuggestedQuestion3".localized,
+                                tip: "SuggestedTip3".localized
                             )
-
+                            
                             QuestionSuggestion(
-                                question: "Who would you typically see here?",
-                                tip: "Common visitors"
+                                question: "SuggestedQuestion4".localized,
+                                tip: "SuggestedTip4".localized
                             )
-
+                            
                             QuestionSuggestion(
-                                question: "What time is this place busiest?",
-                                tip: "Daily patterns"
+                                question: "SuggestedQuestion5".localized,
+                                tip: "SuggestedTip5".localized
                             )
                         }
                     }
@@ -145,12 +145,12 @@ struct GamePlayView: View {
 
             // Action buttons
             VStack(spacing: 16) {
-                PrimaryButton(text: NSLocalizedString("VoteOnSpy", comment: "Vote on Spy"), color: .red) {
+                PrimaryButton(text: "VoteOnSpy".localized, color: .red) {
                     viewModel.showVotingSheet = true
                 }
                 .padding(.horizontal)
 
-                SecondaryButton(text: NSLocalizedString("EndGame", comment: "End Game"), color: .white) {
+                SecondaryButton(text: "EndGame".localized, color: .white) {
                     viewModel.endGame(spyWins: false)
                 }
                 .padding(.horizontal)

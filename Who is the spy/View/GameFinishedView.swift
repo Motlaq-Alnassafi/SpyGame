@@ -21,7 +21,7 @@ struct GameFinishedView: View {
                     .font(.system(size: 32, weight: .bold, design: .rounded))
                     .foregroundColor(.white)
 
-                Text(NSLocalizedString("TheLocationWas", comment: "The location was"))
+                Text("TheLocationWas".localized)
                     .font(.subheadline)
                     .foregroundColor(.white.opacity(0.7))
 
@@ -40,7 +40,7 @@ struct GameFinishedView: View {
             }
             ScrollView {
                 VStack(alignment: .leading, spacing: 16) {
-                    Text(NSLocalizedString("PlayerRoles", comment: "Player Roles"))
+                    Text("PlayerRoles".localized)
                         .font(.headline)
                         .foregroundColor(.white)
 
@@ -54,7 +54,7 @@ struct GameFinishedView: View {
                                     .font(.headline)
                                     .foregroundColor(.white)
 
-                                Text(player.isSpy ? NSLocalizedString("Spy", comment: "Spy") : NSLocalizedString("RegularPlayer", comment: "Regular Player"))
+                                Text(player.isSpy ? "Spy".localized : "RegularPlayer".localized)
                                     .font(.subheadline)
                                     .foregroundColor(player.isSpy ? .red : .green)
                             }
@@ -75,11 +75,11 @@ struct GameFinishedView: View {
             Spacer()
 
             VStack(spacing: 16) {
-                PrimaryButton(text: NSLocalizedString("PlayAgain", comment: "Play Again"), color: .indigo) {
+                PrimaryButton(text: "PlayAgain".localized, color: .indigo) {
                     viewModel.resetGame()
                 }
 
-                SecondaryButton(text: NSLocalizedString("ChangePlayers", comment: "Change Players"), color: .white) {
+                SecondaryButton(text: "ChangePlayers".localized, color: .white) {
                     viewModel.resetGame()
                 }
             }

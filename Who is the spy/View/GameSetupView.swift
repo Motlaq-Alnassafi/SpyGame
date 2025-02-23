@@ -19,7 +19,7 @@ struct GameSetupView: View {
                 Text("🕵️")
                     .font(.system(size: 48))
 
-                Text(NSLocalizedString("GameSetup", comment: "Game Setup"))
+                Text("GameSetup".localized)
                     .font(.system(size: 28, weight: .bold, design: .rounded))
                     .foregroundColor(.white)
             }
@@ -28,7 +28,7 @@ struct GameSetupView: View {
             VStack(spacing: 24) {
                 VStack(alignment: .leading, spacing: 12) {
                     HStack {
-                        Text("\(NSLocalizedString("Players", comment: "Players")): \(playerCount)")
+                        Text("\("Players".localized): \(playerCount)")
                             .font(.headline)
                             .foregroundColor(.white)
 
@@ -57,7 +57,7 @@ struct GameSetupView: View {
 
                 VStack(alignment: .leading, spacing: 12) {
                     HStack {
-                        Text("\(NSLocalizedString("Spies", comment: "Spies")): \(spyCount)")
+                        Text("\("Spies".localized): \(spyCount)")
                             .font(.headline)
                             .foregroundColor(.white)
                         Spacer()
@@ -79,16 +79,16 @@ struct GameSetupView: View {
             .padding(.horizontal)
 
             VStack(spacing: 16) {
-                Toggle(NSLocalizedString("CustomPlayerNames", comment: "Custom Player Names"), isOn: $viewModel.customPlayerNames)
+                Toggle("CustomPlayerNames".localized, isOn: $viewModel.customPlayerNames)
                     .toggleStyle(SwitchToggleStyle(tint: .indigo))
 
                 HStack {
-                    Toggle(NSLocalizedString("HapticFeedback", comment: "Haptic Feedback"), isOn: $viewModel.hapticFeedback)
+                    Toggle("HapticFeedback".localized, isOn: $viewModel.hapticFeedback)
                         .toggleStyle(SwitchToggleStyle(tint: .indigo))
 
                     Spacer()
 
-                    Toggle(NSLocalizedString("SoundEffects", comment: "Sound Effects"), isOn: $viewModel.soundEffects)
+                    Toggle("SoundEffects".localized, isOn: $viewModel.soundEffects)
                         .toggleStyle(SwitchToggleStyle(tint: .indigo))
                 }
 //                                        SelectableOptionsView()
@@ -101,11 +101,11 @@ struct GameSetupView: View {
             Spacer()
 
             VStack(alignment: .leading, spacing: 8) {
-                Text(NSLocalizedString("HowToPlay", comment: "How to Play"))
+                Text("HowToPlay".localized)
                     .font(.headline)
                     .foregroundColor(.white)
 
-                Text(NSLocalizedString("HowToPlayDescription", comment: "How to Play discription"))
+                Text("HowToPlayDescription".localized)
                     .font(.subheadline)
                     .foregroundColor(.white.opacity(0.7))
             }
@@ -114,7 +114,7 @@ struct GameSetupView: View {
             .cornerRadius(16)
             .padding(.horizontal)
 
-            PrimaryButton(text: NSLocalizedString("StartGame", comment: "Start Game"), color: .indigo) {
+            PrimaryButton(text: "StartGame".localized, color: .indigo) {
                 viewModel.setupGame(playerCount: playerCount, spyCount: spyCount)
             }
             .padding(.horizontal, 32)

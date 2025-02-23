@@ -21,11 +21,11 @@ struct RoleRevealView: View {
                         .font(.system(size: 64))
                         .padding(.top, 40)
 
-                    Text(NSLocalizedString("RoleReveal", comment: "Time to Reveal Roles"))
+                    Text("RoleReveal".localized)
                         .font(.system(size: 28, weight: .bold, design: .rounded))
                         .foregroundColor(.white)
 
-                    Text(NSLocalizedString("RoleRevealDiscription", comment: "Pass the device around so each player can see their secret role. Don't show your role to others!"))
+                    Text("RoleRevealDiscription".localized)
                         .font(.system(size: 16))
                         .multilineTextAlignment(.center)
                         .foregroundColor(.white.opacity(0.8))
@@ -38,7 +38,7 @@ struct RoleRevealView: View {
 
                     Spacer()
 
-                    PrimaryButton(text: NSLocalizedString("RoleRevealCTA", comment: "Begin Role Reveal"), color: .indigo) {
+                    PrimaryButton(text: "RoleRevealCTA".localized, color: .indigo) {
                         viewModel.nextPlayer()
                     }
                     .padding(.horizontal, 32)
@@ -78,7 +78,7 @@ struct RoleRevealView: View {
                     }
                 } else {
                     VStack(spacing: 24) {
-                        Text(NSLocalizedString("PassTheDevice", comment: "Pass the device to"))
+                        Text("PassTheDevice".localized)
                             .font(.system(size: 18, weight: .medium))
                             .foregroundColor(.white.opacity(0.8))
 
@@ -119,7 +119,7 @@ struct RoleRevealView: View {
                                                 .foregroundColor(.white)
                                                 .padding(.horizontal)
                                         } else {
-                                            Text(NSLocalizedString("TapToRevealYourRole", comment: "Tap to reveal your role"))
+                                            Text("TapToRevealYourRole".localized)
                                                 .font(.headline)
                                                 .foregroundColor(.white)
                                         }
@@ -139,7 +139,7 @@ struct RoleRevealView: View {
                         Spacer()
 
                         if showRole {
-                            PrimaryButton(text: NSLocalizedString("NextPlayer", comment: "Next Player"), color: viewModel.getRoleColor(player)) {
+                            PrimaryButton(text: "NextPlayer".localized, color: viewModel.getRoleColor(player)) {
                                 withAnimation {
                                     showRole = false
                                     cardRotation = 0

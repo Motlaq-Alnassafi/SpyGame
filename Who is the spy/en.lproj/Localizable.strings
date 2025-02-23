@@ -42,6 +42,14 @@
 "SuggestedQuestions" = "Suggested Questions";
 "SuggestedQuestion1" = "What can you see around you?";
 "SuggestedTip1" = "Good opening question";
+"SuggestedQuestion2" = "What sounds do you typically hear?";
+"SuggestedTip2" = "Location atmosphere";
+"SuggestedQuestion3" = "What activities happen here?";
+"SuggestedTip3" = "Location purpose";
+"SuggestedQuestion4" = "Who would you typically see here?";
+"SuggestedTip4" = "Common visitors";
+"SuggestedQuestion5" = "What time is this place busiest?";
+"SuggestedTip5" = "Daily patterns";
 "SpiesWin" = "Spies Win!";
 "RegularPlayersWin" = "Regular Players Win!";
 "PlayerRoles" = "Player Roles";
