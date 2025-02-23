@@ -5,11 +5,10 @@
 //  Created by Motlaq Alnassafi on 21/02/2025.
 //
 
-import XCTest
 @testable import Who_is_the_spy
+import XCTest
 
 final class Who_is_the_spyTests: XCTestCase {
-
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -28,9 +27,8 @@ final class Who_is_the_spyTests: XCTestCase {
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
-        self.measure {
+        measure {
             // Put the code you want to measure the time of here.
         }
     }
-
 }

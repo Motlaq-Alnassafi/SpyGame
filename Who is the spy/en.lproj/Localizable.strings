@@ -1,0 +1,69 @@
+//
+//  Localizable.strings
+//  Who is the spy
+//
+//  Created by Motlaq Alnassafi on 21/02/2025.
+//
+
+// Game
+"whoIsTheSpy" = "WHO'S THE SPY?";
+"GroupPlay" = "Group Play";
+"GroupPlayDescription" = "3-12 players try to find the spy";
+"StartPlaying" = "Start Playing";
+"SecretLocations" = "Secret Locations";
+"GameSetup" = "Game Setup";
+"TimedRounds" = "Timed Rounds";
+"uniqueLocations" = "More than 100 unique locations to discover";
+"GameDescribtion" = "A social deduction game";
+"TimedRoundsDescribtion" = "8-minute gameplay with countdown";
+"Players" = "Players";
+"Spies" = "Spies";
+"HowToPlay" = "How to Play";
+"HowToPlayDescription" = "• Regular players know the location but must be careful not to reveal too much\n• Spies try to figure out where they are while avoiding detection\n• Players take turns asking and answering questions about the location\n• Vote on who you think is a spy when you're confident!";
+"StartGame" = "Start Game";
+"RoleReveal" = "Time to Reveal Roles";
+"RoleRevealCTA" = "Begin Role Reveal";
+"RoleRevealDiscription" = "Pass the device around so each player can see their secret role. Don't show your role to others!";
+"Player" = "Player";
+"PassTheDevice" = "Pass the device to";
+"TapToRevealYourRole" = "Tap to reveal your role";
+"NextPlayer" = "Next Player";
+"Location" = "Location";
+"PlayerRoleDescription" = "Ask and answer questions without being too obvious!";
+"YouAreTheSpy" = "You are the Spy!";
+"FigureOutLocation" = "Try to figure out the location without being caught.";
+"RegularPlayer" = "Regular Player";
+"Spy" = "Spy";
+"TheLocationWas" = "The location was";
+"PlayAgain" = "Play Again";
+"ChangePlayers" = "Change Players";
+"EndGame" = "End Game";
+"VoteOnSpy" = "Vote on Spy";
+"SuggestedQuestions" = "Suggested Questions";
+"SuggestedQuestion1" = "What can you see around you?";
+"SuggestedTip1" = "Good opening question";
+"SpiesWin" = "Spies Win!";
+"RegularPlayersWin" = "Regular Players Win!";
+
+
+
+
+// Locations
+"Synagogue" = "Synagogue";
+"TheWalk" = "The Walk";
+"Mosque" = "Mosque";
+"KuwaitTowers" = "Kuwait Towers";
+"JaberBridge" = "Jaber Bridge";
+"Chalat" = "Chalat";
+"NationalAssembly" = "National Assembly";
+"Camping" = "Camping"; 
+"TheMoon" = "The Moon"; 
+"Haven" = "Haven"; 
+"Farm" = "Farm"; 
+"LuandryMat" = "Luandry Mat"; 
+"CarDealerShip" = "Car Dealer Ship"; 
+"BarbarShop" = "Barbar Shop";
+"SuperMarket" = "Super Market"; 
+"JACC" = "Jaber Al-Ahmad Cultural Center"; 
+"HellFire" = "Hell Fire"; 
+

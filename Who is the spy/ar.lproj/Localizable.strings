@@ -1,0 +1,65 @@
+//
+//  Localizable.strings
+//  Who is the spy
+//
+//  Created by Motlaq Alnassafi on 21/02/2025.
+//
+//Game
+"whoIsTheSpy" = "منو الجاسوس؟";
+"GroupPlay" = "لعب جماعي";
+"GroupPlayDescription" = "يحاول 3-12 لاعبًا العثور على الجاسوس";
+"StartPlaying" = "ابدأ اللعبة";
+"SecretLocations" = "اماكن سريه";
+"GameSetup" = "إعداد اللعبة";
+"TimedRounds" = "جولات محددة بالوقت";
+"uniqueLocations" = "أكثر من 100 موقع فريد لاكتشافها";
+"GameDescribtion" = "لعبة استنتاج اجتماعي";
+"TimedRoundsDescribtion" = "لعب لمدة 8 دقائق مع عد تنازلي.";
+"Players" = "اللاعبون";
+"Spies" = "الجواسيس";
+"HowToPlay" = "كيفية اللعب";
+"HowToPlayDescription" = "• يعرف اللاعبون العاديون الموقع ولكن يجب أن يكونوا حذرين من كشف الكثير \n• يحاول الجواسيس معرفة مكانهم أثناء تجنب الكشف \n• يتناوب اللاعبون على طرح الأسئلة والإجابة عليها حول الموقع \n• صوّت على من تعتقد أنه جاسوس عندما تكون واثقًا!";
+"StartGame" = "ابدأ اللعبة";
+"RoleReveal" = "حان وقت كشف الأدوار";
+"RoleRevealCTA" = "ابدأ كشف الأدوار";
+"RoleRevealDiscription" = "مرر الجهاز ليرى كل لاعب دوره السري. لا تُظهر دورك للآخرين!";
+"Player" = "اللاعب رقم";
+"PassTheDevice" = "مرر الجهاز إلى";
+"TapToRevealYourRole" = "اضغط لكشف دورك";
+"NextPlayer" = "اللاعب التالي";
+"Location" = "الموقع";
+"PlayerRoleDescription" = "اطرح وأجب على الأسئلة دون أن تكون مكشوفًا جدً!";
+"YouAreTheSpy" = "أنت الجاسوس!";
+"FigureOutLocation" = "حاول اكتشاف الموقع دون أن يتم الإمساك بك.";
+"RegularPlayer" = "لاعب عادي";
+"Spy" = "جاسوس";
+"TheLocationWas" = "كان الموقع";
+"PlayAgain" = "اللعب مرة أخرى";
+"ChangePlayers" = "تغيير اللاعبين";
+"EndGame" = "إنهاء اللعبة";
+"VoteOnSpy" = "التصويت على الجاسوس";
+"SuggestedQuestions" = "الأسئلة المقترحة";
+"SuggestedQuestion1" = "ماذا يمكنك أن ترى من حولك؟";
+"SuggestedTip1" = "سؤال افتتاحي جيد";
+"SpiesWin" = "!فاز الجواسيس";
+"RegularPlayersWin" = "!فاز اللاعبون العاديون";
+
+//locations
+"Synagogue" = "معبد يهودي";
+"TheWalk" = "ذا ولك";
+"Mosque" = "مسجد";
+"KuwaitTowers" = "ابراج الكويت";
+"JaberBridge" = "جسر جابر";
+"Chalat" = "شاليه";
+"NationalAssembly" = "مجلس الأمة";
+"Camping" = "مخيم";
+"TheMoon" = "القمر";
+"Haven" = "الجنه"; 
+"Farm" = "المزرعه"; 
+"LuandryMat" = "مصبغه ملابس";
+"CarDealerShip" = "مصبغه ملابس";
+"BarbarShop" = "حلاق";
+"SuperMarket" = "جمعيه";
+"JACC" = "مركز الشيخ جابر الاحمد الثقافي";
+"HellFire" = "جهنم"; 
+

@@ -8,7 +8,6 @@
 import XCTest
 
 final class Who_is_the_spyUITestsLaunchTests: XCTestCase {
-
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
     }
