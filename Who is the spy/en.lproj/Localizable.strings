@@ -56,6 +56,12 @@
 "CustomPlayerNames" = "Custom Player Names";
 "HapticFeedback" = "Haptic Feedback";
 "SoundEffects" = "Sound Effects";
+"VoteOnSpy" = "Vote on Spy";
+"SelectSpy" = "Select who you think is a spy";
+"Cancel" = "Cancel";
+"ConfirmVote" = "Confirm Vote";
+"Vote" = "Vote";
+"remaining" = "remaining";
 
 
 
@@ -78,4 +84,36 @@
 "SuperMarket" = "Super Market"; 
 "JACC" = "Jaber Al-Ahmad Cultural Center"; 
 "HellFire" = "Hell Fire"; 
+"SouqAl-Mubarakiya" = "Souq Al-Mubarakiya";
+"GrandMosque" = "Grand Mosque";
+"AlShaheedPark" = "Al Shaheed Park";
+"SouqSharq" = "Souq Sharq";
+"TheScientificCenter" = "The Scientific Center";
+"KuwaitZoo" = "Kuwait Zoo";
+"EntertainmentCity" = "Entertainment City";
+"SeifPalace" = "Seif Palace";
+"TheAvenues" = "The Avenues";
+"SabahAlAhmadNatureReserve" = "Sabah Al Ahmad Nature Reserve";
+"FridayMarket" = "Friday Market";
+"LiberationTower" = "Liberation Tower";
+"KuwaitEquestrianClub" = "Kuwait Equestrian Club";
+"KuwaitNationalLibrary" = "Kuwait National Library";
+"FailakaIsland" = "Failaka Island";
+"AlRayaMall" = "Al Raya Mall";
+"KhiranResort" = "Khiran Resort";
+"360Mall" = "360 Mall";
+"QadsiaSportsClub" = "Qadsia Sports Club";
+"AlKoutMall" = "Al Kout Mall";
+"FishMarket" = "Fish Market";
+"MuroojComplex" = "Murooj Complex";
+"IceSkatingRink" = "Ice Skating Rink";
+"KuwaitOperaHouse" = "Kuwait Opera House";
+"KuwaitInternationalAirport" = "Kuwait International Airport";
+"JaberInternationalStadium" = "Jaber International Stadium";
+"ShuwaikhIndustrialArea" = "Shuwaikh Industrial Area";
+"KuwaitUniversity" = "Kuwait University";
+
+
+
+
 

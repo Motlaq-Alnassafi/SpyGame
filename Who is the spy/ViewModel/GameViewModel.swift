@@ -23,7 +23,11 @@ class GameViewModel: ObservableObject {
     @Published var soundEffects = true
     @Published var customPlayerNames = false
     @Published var editablePlayerName = ""
+    @Published var playerCount = 0
+    @Published var spyCount = 0
+    @Published var emoji = ""
 
+    private var locations = Location.locations
     private var currentLocation: Location?
     private var usedEmojis = Set<String>()
     private var currentIndex = 0
@@ -35,13 +39,16 @@ class GameViewModel: ObservableObject {
         case finished
     }
 
-    func getLocation(_ locations: [Location]) -> Location? {
+    func getLocation() -> Location? {
         guard currentIndex < locations.count else {
-            var location = locations
-            location.shuffle()
+            locations.shuffle()
             currentIndex = 0
-            return locations[currentIndex]
+            return returnLocation()
         }
+        return returnLocation()
+    }
+    
+    func returnLocation() -> Location {
         let location = locations[currentIndex]
         currentIndex += 1
         return location
@@ -49,7 +56,7 @@ class GameViewModel: ObservableObject {
 
     func setupGame(playerCount: Int, spyCount: Int) {
         guard playerCount >= 3 && spyCount >= 1 && spyCount < playerCount else { return }
-        currentLocation = getLocation(Location.locations.shuffled())
+        currentLocation = getLocation()
         usedEmojis.removeAll()
 
         var newPlayers: [Player] = []
@@ -109,7 +116,12 @@ class GameViewModel: ObservableObject {
 
     func viewCurrentPlayerRole() {
         guard currentPlayerIndex >= 0 && currentPlayerIndex < players.count else { return }
+        emoji = ""
         players[currentPlayerIndex].hasViewedRole = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {[weak self] in
+            guard let self = self else { return }
+            emoji = getPlayerRoleEmoji(players[currentPlayerIndex])
+        }
     }
 
     func startGame() {
@@ -149,6 +161,15 @@ class GameViewModel: ObservableObject {
         remainingSeconds = 8 * 60
         currentLocation = nil
         showingIntro = false
+    }
+    
+    func playAgain() {
+        timer?.cancel()
+        timer = nil
+        remainingSeconds = 8 * 60
+        currentLocation = nil
+        showingIntro = false
+        setupGame(playerCount: playerCount, spyCount: spyCount)
     }
 
     func getLocationName() -> String {

@@ -55,6 +55,12 @@
 "CustomPlayerNames" = "إنشاء أسماء لاعبين مخصصة";
 "HapticFeedback" = "اهتزاز الجهاز";
 "SoundEffects" = "تأثيرات صوتية";
+"VoteOnSpy" = "صوت على الجاسوس";
+"SelectSpy" = "اختر من تعتقد أنه جاسوس";
+"Cancel" = "إلغاء";
+"ConfirmVote" = "تأكيد التصويت";
+"Vote" = "صوت";
+"remaining" = "المتبقي";
 
 
 //locations
@@ -70,9 +76,37 @@
 "Haven" = "الجنه"; 
 "Farm" = "المزرعه"; 
 "LuandryMat" = "مصبغه ملابس";
-"CarDealerShip" = "مصبغه ملابس";
+"CarDealerShip" = "وكالة سيارات";
 "BarbarShop" = "حلاق";
 "SuperMarket" = "جمعيه";
 "JACC" = "مركز الشيخ جابر الاحمد الثقافي";
-"HellFire" = "جهنم"; 
+"HellFire" = "جهنم";
+"SouqAl-Mubarakiya" = "سوق المباركية";
+"GrandMosque" = "المسجد الكبير";
+"AlShaheedPark" = "حديقة الشهيد";
+"SouqSharq" = "سوق شرق";
+"TheScientificCenter" = "المركز العلمي";
+"KuwaitZoo" = "حديقة الحيوان";
+"EntertainmentCity" = "المدينة الترفيهية";
+"SeifPalace" = "قصر السيف";
+"TheAvenues" = "مجمع الأفنيوز";
+"SabahAlAhmadNatureReserve" = "محمية صباح الأحمد";
+"FridayMarket" = "سوق الجمعة";
+"LiberationTower" = "برج التحرير";
+"KuwaitEquestrianClub" = "نادي الفروسية الكويتي";
+"KuwaitNationalLibrary" = "مكتبة الكويت الوطنية";
+"FailakaIsland" = "جزيرة فيلكا";
+"AlRayaMall" = "مجمع الراية";
+"KhiranResort" = "منتزه الخيران";
+"360Mall" = "مجمع 360";
+"QadsiaSportsClub" = "نادي القادسية الرياضي";
+"AlKoutMall" = "مجمع الكوت";
+"FishMarket" = "سوق السمك";
+"MuroojComplex" = "مجمع مروج";
+"IceSkatingRink" = "حلبة التزلج على الجليد";
+"KuwaitOperaHouse" = "دار الأوبرا الكويتية";
+"KuwaitInternationalAirport" = "مطار الكويت الدولي";
+"JaberInternationalStadium" = "استاد جابر الأحمد الدولي";
+"ShuwaikhIndustrialArea" = "الشويخ  الصناعية";
+"KuwaitUniversity" = "جامعة الكويت";
 

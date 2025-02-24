@@ -110,7 +110,7 @@ struct RoleRevealView: View {
                                 .overlay(
                                     VStack(spacing: 16) {
                                         if showRole {
-                                            Text(viewModel.getPlayerRoleEmoji(player))
+                                            Text(viewModel.emoji)
                                                 .font(.system(size: 48))
 
                                             Text(viewModel.getPlayerRoleDescription(player))
@@ -128,7 +128,7 @@ struct RoleRevealView: View {
                         }
                         .frame(height: 280)
                         .padding(.horizontal, 32)
-                        .onTapGesture {
+                        .onTapGesture(count: 1) {
                             withAnimation(.easeInOut(duration: 0.4)) {
                                 cardRotation += showRole == false ? 180 : 0
                                 showRole = true

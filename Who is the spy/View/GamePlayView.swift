@@ -21,7 +21,6 @@ struct GamePlayView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            // Timer view
             VStack {
                 if showTimer {
                     ZStack {
@@ -42,7 +41,7 @@ struct GamePlayView: View {
                                 .font(.system(size: 32, weight: .bold, design: .monospaced))
                                 .foregroundColor(.white)
 
-                            Text("remaining")
+                            Text("remaining".localized)
                                 .font(.caption)
                                 .foregroundColor(.white.opacity(0.7))
                         }
@@ -51,7 +50,6 @@ struct GamePlayView: View {
                     .padding(.vertical)
                 }
             }
-            .background(Color.black.opacity(0.3))
             .onTapGesture {
                 withAnimation {
                     showTimer.toggle()
@@ -60,7 +58,6 @@ struct GamePlayView: View {
 
             ScrollView {
                 VStack(spacing: 24) {
-                    // Location list
                     VStack {
                         Button(action: {
                             withAnimation {
@@ -103,7 +100,6 @@ struct GamePlayView: View {
                     }
                     .padding(.horizontal)
 
-                    // Question suggestions
                     VStack(alignment: .leading, spacing: 16) {
                         Text("SuggestedQuestions".localized)
                             .font(.headline)
@@ -143,7 +139,6 @@ struct GamePlayView: View {
                 }
             }
 
-            // Action buttons
             VStack(spacing: 16) {
                 PrimaryButton(text: "VoteOnSpy".localized, color: .red) {
                     viewModel.showVotingSheet = true
@@ -156,7 +151,6 @@ struct GamePlayView: View {
                 .padding(.horizontal)
             }
             .padding(.vertical)
-            .background(Color.black.opacity(0.3))
         }
         .sheet(isPresented: $viewModel.showVotingSheet) {
             VotingSheetView(viewModel: viewModel, isPresented: $viewModel.showVotingSheet)

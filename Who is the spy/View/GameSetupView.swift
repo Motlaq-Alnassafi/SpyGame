@@ -91,7 +91,6 @@ struct GameSetupView: View {
                     Toggle("SoundEffects".localized, isOn: $viewModel.soundEffects)
                         .toggleStyle(SwitchToggleStyle(tint: .indigo))
                 }
-//                                        SelectableOptionsView()
             }
             .padding()
             .background(Color.white.opacity(0.05))
@@ -115,6 +114,8 @@ struct GameSetupView: View {
             .padding(.horizontal)
 
             PrimaryButton(text: "StartGame".localized, color: .indigo) {
+                viewModel.playerCount = playerCount
+                viewModel.spyCount = spyCount
                 viewModel.setupGame(playerCount: playerCount, spyCount: spyCount)
             }
             .padding(.horizontal, 32)

@@ -20,11 +20,11 @@ struct VotingSheetView: View {
                 Color.black.opacity(0.9).ignoresSafeArea()
 
                 VStack(spacing: 24) {
-                    Text("Vote on Spy")
+                    Text("VoteOnSpy".localized)
                         .font(.system(size: 28, weight: .bold, design: .rounded))
                         .foregroundColor(.white)
 
-                    Text("Select who you think is a spy")
+                    Text("SelectSpy".localized)
                         .font(.subheadline)
                         .foregroundColor(.white.opacity(0.7))
 
@@ -59,15 +59,15 @@ struct VotingSheetView: View {
                     }
                 }
             }
-            .navigationBarItems(trailing: Button("Cancel") {
+            .navigationBarItems(trailing: Button("Cancel".localized) {
                 isPresented = false
             })
         }
         .alert(isPresented: $showConfirmation) {
             Alert(
-                title: Text("Confirm Vote"),
+                title: Text("ConfirmVote".localized),
                 message: Text("Are you sure \(selectedPlayer?.name ?? "") is a spy?"),
-                primaryButton: .destructive(Text("Vote")) {
+                primaryButton: .destructive(Text("Vote".localized)) {
                     isPresented = false
                     if let player = selectedPlayer {
                         viewModel.endGame(spyWins: !player.isSpy)

@@ -14,7 +14,7 @@ struct GameFinishedView: View {
     var body: some View {
         VStack(spacing: 32) {
             VStack(spacing: 16) {
-                Text(viewModel.winnerRole.contains("Spies") ? "🕵️" : "👥")
+                Text(viewModel.winnerRole.contains("Spies") || viewModel.winnerRole.contains("الجواسيس") ? "🕵️" : "👥")
                     .font(.system(size: 64))
 
                 Text(viewModel.winnerRole)
@@ -76,7 +76,7 @@ struct GameFinishedView: View {
 
             VStack(spacing: 16) {
                 PrimaryButton(text: "PlayAgain".localized, color: .indigo) {
-                    viewModel.resetGame()
+                    viewModel.playAgain()
                 }
 
                 SecondaryButton(text: "ChangePlayers".localized, color: .white) {
