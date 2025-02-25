@@ -14,24 +14,36 @@ struct FeatureRow: View {
 
     var body: some View {
         HStack(spacing: 16) {
-            Image(systemName: icon)
-                .font(.system(size: 24))
-                .foregroundColor(.indigo)
-                .frame(width: 44, height: 44)
-                .background(Color.white.opacity(0.1))
-                .cornerRadius(12)
+            ZStack {
+                RoundedRectangle(cornerRadius: 12)
+                    .fill(CustomColors.mostInnerBackground)
+                    .frame(width: 50, height: 50)
 
-            VStack(alignment: .leading, spacing: 4) {
-                Text(title)
-                    .font(.headline)
+                Image(systemName: icon)
                     .foregroundColor(.white)
-
-                Text(description)
-                    .font(.subheadline)
-                    .foregroundColor(.white.opacity(0.7))
+                    .font(.system(size: 24))
             }
 
+            VStack(alignment: .leading, spacing: 10) {
+                Text(title)
+                    .font(.system(size: 14))
+                    .foregroundColor(CustomColors.textColor)
+
+                Text(description)
+                    .font(.system(size: 12))
+                    .foregroundColor(CustomColors.descriptionColor)
+            }
             Spacer()
         }
+        .padding()
+        .background(
+            RoundedRectangle(cornerRadius: 14)
+                .fill(CustomColors.innerBackground)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 16)
+                        .stroke(Color.white.opacity(0.15), lineWidth: 1)
+                )
+        )
+        .padding(.horizontal)
     }
 }

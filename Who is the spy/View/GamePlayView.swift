@@ -110,22 +110,22 @@ struct GamePlayView: View {
                                 question: "SuggestedQuestion1".localized,
                                 tip: "SuggestedTip1".localized
                             )
-                            
+
                             QuestionSuggestion(
                                 question: "SuggestedQuestion2".localized,
                                 tip: "SuggestedTip2".localized
                             )
-                            
+
                             QuestionSuggestion(
                                 question: "SuggestedQuestion3".localized,
                                 tip: "SuggestedTip3".localized
                             )
-                            
+
                             QuestionSuggestion(
                                 question: "SuggestedQuestion4".localized,
                                 tip: "SuggestedTip4".localized
                             )
-                            
+
                             QuestionSuggestion(
                                 question: "SuggestedQuestion5".localized,
                                 tip: "SuggestedTip5".localized

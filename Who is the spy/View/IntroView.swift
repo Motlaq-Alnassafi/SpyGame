@@ -5,37 +5,23 @@
 //  Created by Motlaq Alnassafi on 23/02/2025.
 //
 
+import SwiftUI
 import SwiftUICore
 import UIKit
-import SwiftUI
 
 struct IntroView: View {
     @ObservedObject var viewModel: GameViewModel
 
     var body: some View {
-        VStack(spacing: 36) {
-            Spacer()
-            
+        VStack(spacing: .zero) {
             makeGlobeButton()
-                .frame(width: 24, height: 24)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding([.bottom, .top], -36)
-                .padding(.leading, 20)
+                .frame(maxWidth: .infinity, alignment: .trailing)
+                .padding(.trailing, 30)
+                .padding(.top, 20)
+                .padding(.bottom, 20)
 
-            VStack(spacing: 16) {
-                Text("🕵️")
-                    .font(.system(size: 80))
-
-                Text("whoIsTheSpy".localized)
-                    .font(.system(size: 36, weight: .bold, design: .rounded))
-                    .foregroundColor(.white)
-
-                Text("GameDescribtion".localized)
-                    .font(.system(size: 18, weight: .medium, design: .rounded))
-                    .foregroundColor(.white.opacity(0.7))
-            }
-
-            Spacer()
+            LogoCardView(title: "whoIsTheSpy".localized, description: "GameDescribtion".localized, logoFrame: 140, logoPadding: 10, frameHeight: 260, frameWidth: 248)
+                .padding(.bottom, 36)
 
             VStack(spacing: 20) {
                 FeatureRow(icon: "person.3.fill",
@@ -55,12 +41,11 @@ struct IntroView: View {
             PrimaryButton(text: "StartPlaying".localized, color: .indigo) {
                 viewModel.showingIntro = false
             }
-            .padding(.horizontal, 32)
-
-            Spacer()
+            .padding(.horizontal, 48)
+            .padding(.bottom, 32)
         }
     }
-    
+
     @ViewBuilder
     func makeGlobeButton() -> some View {
         Button(action: {
@@ -71,8 +56,18 @@ struct IntroView: View {
             }
         }) {
             Image(systemName: "globe")
-                .font(.system(size: 24))
+                .font(.system(size: 20))
                 .foregroundColor(.white)
+                .frame(width: 40, height: 40)
+                .background(
+                    RoundedRectangle(cornerRadius: 9)
+                        .fill(CustomColors.innerBackground)
+                        .shadow(color: Color.black.opacity(0.3), radius: 2, x: 0, y: 1)
+                )
+                .overlay(
+                    RoundedRectangle(cornerRadius: 12)
+                        .stroke(Color.white.opacity(0.15), lineWidth: 1)
+                )
         }
     }
 }

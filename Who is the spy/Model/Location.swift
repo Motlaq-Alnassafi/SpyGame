@@ -58,6 +58,6 @@ struct Location: Identifiable, Hashable {
         Location(name: "KuwaitInternationalAirport".localized, emoji: "✈️", color: .gray),
         Location(name: "JaberInternationalStadium".localized, emoji: "🏟️", color: .gray),
         Location(name: "ShuwaikhIndustrialArea".localized, emoji: "🏭", color: .gray),
-        Location(name: "KuwaitUniversity".localized, emoji: "🎓", color: .gray)
+        Location(name: "KuwaitUniversity".localized, emoji: "🎓", color: .gray),
     ].shuffled()
 }

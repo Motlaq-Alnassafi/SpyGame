@@ -12,6 +12,7 @@ struct RoleRevealView: View {
     @ObservedObject var viewModel: GameViewModel
     @State private var showRole = false
     @State private var cardRotation = 0.0
+    @State private var tapped = false
 
     var body: some View {
         VStack(spacing: 24) {
@@ -86,9 +87,6 @@ struct RoleRevealView: View {
                             .font(.system(size: 32, weight: .bold, design: .rounded))
                             .foregroundColor(.white)
 
-//                                                Text(player.emoji)
-//                                                    .font(.system(size: 64))
-
                         ZStack {
                             RoundedRectangle(cornerRadius: 24)
                                 .fill(
@@ -128,11 +126,14 @@ struct RoleRevealView: View {
                         }
                         .frame(height: 280)
                         .padding(.horizontal, 32)
-                        .onTapGesture(count: 1) {
-                            withAnimation(.easeInOut(duration: 0.4)) {
-                                cardRotation += showRole == false ? 180 : 0
-                                showRole = true
-                                viewModel.viewCurrentPlayerRole()
+                        .onTapGesture {
+                            if !tapped {
+                                withAnimation(.easeInOut(duration: 0.4)) {
+                                    cardRotation += showRole == false ? 180 : 0
+                                    showRole = true
+                                    viewModel.viewCurrentPlayerRole()
+                                    tapped = true
+                                }
                             }
                         }
 
@@ -141,6 +142,7 @@ struct RoleRevealView: View {
                         if showRole {
                             PrimaryButton(text: "NextPlayer".localized, color: viewModel.getRoleColor(player)) {
                                 withAnimation {
+                                    tapped = false
                                     showRole = false
                                     cardRotation = 0
                                     viewModel.nextPlayer()

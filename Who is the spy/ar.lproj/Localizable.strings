@@ -9,16 +9,15 @@
 "GroupPlay" = "لعب جماعي";
 "GroupPlayDescription" = "يحاول 3-12 لاعبًا العثور على الجاسوس";
 "StartPlaying" = "ابدأ اللعبة";
-"SecretLocations" = "اماكن سريه";
-"GameSetup" = "إعداد اللعبة";
+"SecretLocations" = "أماكن سرية";
+"GameSetup" = "إعدادات اللعبة";
 "TimedRounds" = "جولات محددة بالوقت";
 "uniqueLocations" = "أكثر من 100 موقع فريد لاكتشافها";
 "GameDescribtion" = "لعبة استنتاج اجتماعي";
 "TimedRoundsDescribtion" = "لعب لمدة 8 دقائق مع عد تنازلي.";
 "Players" = "اللاعبون";
 "Spies" = "الجواسيس";
-"HowToPlay" = "كيفية اللعب";
-"HowToPlayDescription" = "• يعرف اللاعبون العاديون الموقع ولكن يجب أن يكونوا حذرين من كشف الكثير \n• يحاول الجواسيس معرفة مكانهم أثناء تجنب الكشف \n• يتناوب اللاعبون على طرح الأسئلة والإجابة عليها حول الموقع \n• صوّت على من تعتقد أنه جاسوس عندما تكون واثقًا!";
+"HowToPlay" = "شلون تلعب: منو الجاسوس؟";
 "StartGame" = "ابدأ اللعبة";
 "RoleReveal" = "حان وقت كشف الأدوار";
 "RoleRevealCTA" = "ابدأ كشف الأدوار";
@@ -61,6 +60,7 @@
 "ConfirmVote" = "تأكيد التصويت";
 "Vote" = "صوت";
 "remaining" = "المتبقي";
+"questionmark" = "questionmark.ar";
 
 
 //locations

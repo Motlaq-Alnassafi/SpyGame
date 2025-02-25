@@ -12,114 +12,109 @@ struct GameSetupView: View {
     @ObservedObject var viewModel: GameViewModel
     @State private var playerCount: Int = 5
     @State private var spyCount: Int = 1
+    @State private var showingRules = false
 
     var body: some View {
-        VStack(spacing: 32) {
-            VStack(spacing: 8) {
-                Text("🕵️")
-                    .font(.system(size: 48))
+        VStack(spacing: .zero) {
+            customNavigationBar()
+                .padding(.top, 20)
 
-                Text("GameSetup".localized)
-                    .font(.system(size: 28, weight: .bold, design: .rounded))
-                    .foregroundColor(.white)
-            }
-            .padding(.top, 32)
+            LogoCardView(title: "GameSetup".localized, logoFrame: 80, logoPadding: 10, frameHeight: 170, frameWidth: 200)
+                .padding(.top, 32)
 
-            VStack(spacing: 24) {
-                VStack(alignment: .leading, spacing: 12) {
+            VStack(spacing: 12) {
+                VStack(alignment: .leading, spacing: 18) {
                     HStack {
-                        Text("\("Players".localized): \(playerCount)")
-                            .font(.headline)
+                        Text("\("Players".localized)")
+                            .font(.system(size: 16, weight: .bold))
                             .foregroundColor(.white)
 
                         Spacer()
 
-                        HStack(spacing: 4) {
-                            ForEach(1 ... min(playerCount, 8), id: \.self) { _ in
-                                Circle()
-                                    .fill(Color.indigo)
-                                    .frame(width: 8, height: 8)
-                            }
-
-                            if playerCount > 8 {
-                                Text("+\(playerCount - 8)")
-                                    .font(.caption)
-                                    .foregroundColor(.white.opacity(0.7))
-                            }
-                        }
+                        Text("\(playerCount)")
+                            .font(.system(size: 16, weight: .bold))
+                            .foregroundColor(.white)
                     }
 
-                    Slider(value: Binding(
-                        get: { Double(playerCount) },
-                        set: { playerCount = Int($0) }
-                    ), in: 3 ... 12, step: 1)
+                    CustomSlider(value: $playerCount, minimumValue: 3, maximumValue: 12)
                 }
 
-                VStack(alignment: .leading, spacing: 12) {
+                VStack(alignment: .leading, spacing: 18) {
                     HStack {
-                        Text("\("Spies".localized): \(spyCount)")
-                            .font(.headline)
+                        Text("\("Spies".localized)")
+                            .font(.system(size: 16, weight: .bold))
                             .foregroundColor(.white)
+
                         Spacer()
 
-                        HStack(spacing: 4) {
-                            ForEach(1 ... spyCount, id: \.self) { _ in
-                                Image(systemName: "eye.fill")
-                                    .foregroundColor(.red)
-                            }
-                        }
+                        Text("\(spyCount)")
+                            .font(.system(size: 16, weight: .bold))
+                            .foregroundColor(.white)
                     }
 
-                    Slider(value: Binding(
-                        get: { Double(spyCount) },
-                        set: { spyCount = min(Int($0), playerCount - 2) }
-                    ), in: 1 ... 4, step: 1)
+                    CustomSlider(value: $spyCount, minimumValue: 1, maximumValue: 4)
                 }
             }
             .padding(.horizontal)
 
-            VStack(spacing: 16) {
-                Toggle("CustomPlayerNames".localized, isOn: $viewModel.customPlayerNames)
-                    .toggleStyle(SwitchToggleStyle(tint: .indigo))
+            CustomToggle(toggled: $viewModel.customPlayerNames, text: "CustomPlayerNames".localized)
+                .frame(maxWidth: .infinity, maxHeight: 100)
+                .padding(.horizontal)
 
-                HStack {
-                    Toggle("HapticFeedback".localized, isOn: $viewModel.hapticFeedback)
-                        .toggleStyle(SwitchToggleStyle(tint: .indigo))
+            SmallerToggleView(toggled: $viewModel.hapticFeedback, text: "HapticFeedback".localized)
+                .padding(.horizontal)
+                .padding(.bottom, 16)
 
-                    Spacer()
-
-                    Toggle("SoundEffects".localized, isOn: $viewModel.soundEffects)
-                        .toggleStyle(SwitchToggleStyle(tint: .indigo))
-                }
-            }
-            .padding()
-            .background(Color.white.opacity(0.05))
-            .cornerRadius(16)
-            .padding(.horizontal)
+            SmallerToggleView(toggled: $viewModel.soundEffects, text: "SoundEffects".localized)
+                .padding(.horizontal)
+                .padding(.bottom, 16)
 
             Spacer()
-
-            VStack(alignment: .leading, spacing: 8) {
-                Text("HowToPlay".localized)
-                    .font(.headline)
-                    .foregroundColor(.white)
-
-                Text("HowToPlayDescription".localized)
-                    .font(.subheadline)
-                    .foregroundColor(.white.opacity(0.7))
-            }
-            .padding()
-            .background(Color.white.opacity(0.05))
-            .cornerRadius(16)
-            .padding(.horizontal)
 
             PrimaryButton(text: "StartGame".localized, color: .indigo) {
                 viewModel.playerCount = playerCount
                 viewModel.spyCount = spyCount
                 viewModel.setupGame(playerCount: playerCount, spyCount: spyCount)
             }
-            .padding(.horizontal, 32)
+            .frame(alignment: .bottom)
+            .padding(.horizontal, 48)
             .padding(.bottom, 32)
+        }
+        .fullScreenCover(isPresented: $showingRules) {
+            GameRulesView()
+        }
+    }
+
+    @ViewBuilder
+    func customNavigationBar() -> some View {
+        VStack(spacing: .zero) {
+            HStack(spacing: .zero) {
+                makeNavigationSectionButton(icon: "house", action: { viewModel.showingIntro = true })
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.leading, 30)
+                makeNavigationSectionButton(icon: "questionmark".localized, action: { showingRules = true })
+                    .frame(maxWidth: .infinity, alignment: .trailing)
+                    .padding(.trailing, 30)
+            }
+        }
+    }
+
+    @ViewBuilder
+    func makeNavigationSectionButton(icon: String, action: @escaping (() -> Void)) -> some View {
+        Button(action: action) {
+            Image(systemName: icon)
+                .font(.system(size: 20))
+                .foregroundColor(.white)
+                .frame(width: 40, height: 40)
+                .background(
+                    RoundedRectangle(cornerRadius: 9)
+                        .fill(CustomColors.innerBackground)
+                        .shadow(color: Color.black.opacity(0.3), radius: 2, x: 0, y: 1)
+                )
+                .overlay(
+                    RoundedRectangle(cornerRadius: 12)
+                        .stroke(Color.white.opacity(0.15), lineWidth: 1)
+                )
         }
     }
 }

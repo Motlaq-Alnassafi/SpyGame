@@ -18,8 +18,7 @@
 "TimedRoundsDescribtion" = "8-minute gameplay with countdown";
 "Players" = "Players";
 "Spies" = "Spies";
-"HowToPlay" = "How to Play";
-"HowToPlayDescription" = "• Regular players know the location but must be careful not to reveal too much\n• Spies try to figure out where they are while avoiding detection\n• Players take turns asking and answering questions about the location\n• Vote on who you think is a spy when you're confident!";
+"HowToPlay" = "How to Play: Who's The Spy?";
 "StartGame" = "Start Game";
 "RoleReveal" = "Time to Reveal Roles";
 "RoleRevealCTA" = "Begin Role Reveal";
@@ -62,6 +61,7 @@
 "ConfirmVote" = "Confirm Vote";
 "Vote" = "Vote";
 "remaining" = "remaining";
+"questionmark" = "questionmark";
 
 
 

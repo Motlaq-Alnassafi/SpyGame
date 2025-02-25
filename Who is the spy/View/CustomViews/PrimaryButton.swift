@@ -10,7 +10,7 @@ import SwiftUICore
 
 struct PrimaryButton: View {
     var text: String
-    var color: Color = .blue
+    var color: Color = .init(hex: "#FF6600")
     var action: () -> Void
 
     var body: some View {
@@ -18,18 +18,13 @@ struct PrimaryButton: View {
             Text(text)
                 .font(.headline)
                 .fontWeight(.bold)
-                .foregroundColor(.white)
+                .foregroundColor(CustomColors.textColor)
                 .frame(height: 56)
                 .frame(maxWidth: .infinity)
-                .background(
-                    LinearGradient(
-                        gradient: Gradient(colors: [color, color.opacity(0.8)]),
-                        startPoint: .topLeading,
-                        endPoint: .bottomTrailing
-                    )
+                .background(CustomColors.primaryButton
                 )
                 .cornerRadius(16)
-                .shadow(color: color.opacity(0.3), radius: 10, x: 0, y: 5)
+                .shadow(color: Color.orange.opacity(0.2), radius: 10, x: 0, y: 5)
         }
     }
 }

@@ -10,17 +10,9 @@ import SwiftUI
 
 struct SpyGameView: View {
     @StateObject private var viewModel = GameViewModel()
-
     var body: some View {
         ZStack {
-            LinearGradient(
-                gradient: Gradient(colors: [Color(red: 0.1, green: 0.1, blue: 0.2), Color(red: 0.05, green: 0.05, blue: 0.1)]),
-                startPoint: .top,
-                endPoint: .bottom
-            )
-            .ignoresSafeArea()
-
-            VStack {
+            VStack(spacing: .zero) {
                 switch viewModel.gameState {
                 case .setup:
                     if viewModel.showingIntro {
@@ -36,8 +28,10 @@ struct SpyGameView: View {
                     GameFinishedView(viewModel: viewModel)
                 }
             }
+            .frame(maxHeight: .infinity, alignment: .top)
             .animation(.easeInOut(duration: 0.3), value: viewModel.gameState)
         }
+        .background(CustomColors.applicationBackground)
         .preferredColorScheme(.dark)
     }
 }

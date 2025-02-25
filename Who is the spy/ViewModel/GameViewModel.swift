@@ -15,7 +15,7 @@ class GameViewModel: ObservableObject {
     @Published var gameState: GameState = .setup
     @Published var currentPlayerIndex: Int = -1
     @Published var timer: AnyCancellable?
-    @Published var remainingSeconds: Int = 8 * 60 // 8 minutes
+    @Published var remainingSeconds: Int = 8 * 60
     @Published var winnerRole: String = ""
     @Published var showVotingSheet = false
     @Published var showingIntro = true
@@ -47,7 +47,7 @@ class GameViewModel: ObservableObject {
         }
         return returnLocation()
     }
-    
+
     func returnLocation() -> Location {
         let location = locations[currentIndex]
         currentIndex += 1
@@ -118,7 +118,7 @@ class GameViewModel: ObservableObject {
         guard currentPlayerIndex >= 0 && currentPlayerIndex < players.count else { return }
         emoji = ""
         players[currentPlayerIndex].hasViewedRole = true
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {[weak self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) { [weak self] in
             guard let self = self else { return }
             emoji = getPlayerRoleEmoji(players[currentPlayerIndex])
         }
@@ -161,8 +161,9 @@ class GameViewModel: ObservableObject {
         remainingSeconds = 8 * 60
         currentLocation = nil
         showingIntro = false
+        customPlayerNames = false
     }
-    
+
     func playAgain() {
         timer?.cancel()
         timer = nil
