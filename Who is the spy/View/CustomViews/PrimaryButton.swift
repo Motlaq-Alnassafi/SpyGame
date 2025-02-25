@@ -16,13 +16,12 @@ struct PrimaryButton: View {
     var body: some View {
         Button(action: action) {
             Text(text)
-                .font(.headline)
-                .fontWeight(.bold)
+                .font(.system(size: 20))
+                .fontWeight(.semibold)
                 .foregroundColor(CustomColors.textColor)
                 .frame(height: 56)
                 .frame(maxWidth: .infinity)
-                .background(CustomColors.primaryButton
-                )
+                .background(CustomColors.primaryButton)
                 .cornerRadius(16)
                 .shadow(color: Color.orange.opacity(0.2), radius: 10, x: 0, y: 5)
         }

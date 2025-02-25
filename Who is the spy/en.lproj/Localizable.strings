@@ -62,11 +62,24 @@
 "Vote" = "Vote";
 "remaining" = "remaining";
 "questionmark" = "questionmark";
+"Setup" = "Setup";
+"RuleSection1" = "1. Each player gets a secret card with a location.\n2. Most players get the same location, but the spy gets a different one.\n3. The spy doesn't know who the other players are, and the other players don't know who the spy is.";
+"Gameplay" = "Gameplay";
+"RuleSection2" = "1. Players take turns asking one another questions about the location.\n2. The spy must pretend to know the location without being too obvious.\n3. Non-spy players must prove they know the location without revealing too much.";
+"Winning" = "Winning";
+"RuleSection3" = "• The spy wins if they guess the correct location or if time runs out without being identified.\n• The non-spy players win if they correctly identify the spy.";
+"Tips" = "Tips";
+"RuleSection4" = "• Ask questions that would be obvious to someone who knows the location.\n• Pay attention to hesitation or vague answers.\n• If you're the spy, listen carefully to gather clues about the location.";
+"GameRules" = "Game Rules";
+
+
 
 
 
 
 // Locations
+"TheSun" = "The Sun";
+"Church" = "Church";
 "Synagogue" = "Synagogue";
 "TheWalk" = "The Walk";
 "Mosque" = "Mosque";
@@ -112,6 +125,43 @@
 "JaberInternationalStadium" = "Jaber International Stadium";
 "ShuwaikhIndustrialArea" = "Shuwaikh Industrial Area";
 "KuwaitUniversity" = "Kuwait University";
+"Zoo" = "Zoo";
+"Cinema" = "Cinema";
+"AmusementPark" = "Amusement Park";
+"Spa" = "Spa";
+"Gym" = "Gym";
+"Hotel" = "Hotel";
+"Bank" = "Bank";
+"Court" = "Court";
+"FireStation" = "Fire Station";
+"PoliceStation" = "Police Station";
+"Factory" = "Factory";
+"University" = "University";
+"School" = "School";
+"Harbor" = "Harbor";
+"BusStation" = "Bus Station";
+"TrainStation" = "Train Station";
+"Airport" = "Airport";
+"Pharmacy" = "Pharmacy";
+"Hospital" = "Hospital";
+"Bakery" = "Bakery";
+"Cafe" = "Cafe";
+"Restaurant" = "Restaurant";
+"Theater" = "Theater";
+"Museum" = "Museum";
+"Library" = "Library";
+"Mall" = "Mall";
+"Bridge" = "Bridge";
+"Park" = "Park";
+"Cave" = "Cave";
+"Forest" = "Forest";
+"Skyscraper" = "Skyscraper";
+"UndergroundTunnel" = "Underground Tunnel";
+"ParkingLot" = "Parking Lot";
+"GasStation" = "Gas Station";
+"CarWash" = "Car Wash";
+"Elevator" = "Elevator";
+
 
 
 

@@ -21,28 +21,28 @@ struct GameRulesView: View {
                         .padding(.top)
 
                     RuleSection(
-                        title: "Setup",
-                        content: "1. Each player gets a secret card with a location.\n2. Most players get the same location, but the spy gets a different one.\n3. The spy doesn't know who the other players are, and the other players don't know who the spy is."
+                        title: "Setup".localized,
+                        content: "RuleSection1".localized
                     )
 
                     RuleSection(
-                        title: "Gameplay",
-                        content: "1. Players take turns asking one another questions about the location.\n2. The spy must pretend to know the location without being too obvious.\n3. Non-spy players must prove they know the location without revealing too much."
+                        title: "Gameplay".localized,
+                        content: "RuleSection2".localized
                     )
 
                     RuleSection(
-                        title: "Winning",
-                        content: "• The spy wins if they guess the correct location or if time runs out without being identified.\n• The non-spy players win if they correctly identify the spy."
+                        title: "Winning".localized,
+                        content: "RuleSection3".localized
                     )
 
                     RuleSection(
-                        title: "Tips",
-                        content: "• Ask questions that would be obvious to someone who knows the location.\n• Pay attention to hesitation or vague answers.\n• If you're the spy, listen carefully to gather clues about the location."
+                        title: "Tips".localized,
+                        content: "RuleSection4".localized
                     )
                 }
                 .padding()
             }
-            .navigationBarTitle("Game Rules", displayMode: .inline)
+            .navigationBarTitle("GameRules".localized, displayMode: .inline)
             .navigationBarItems(
                 leading: Button(action: {
                     presentationMode.wrappedValue.dismiss()

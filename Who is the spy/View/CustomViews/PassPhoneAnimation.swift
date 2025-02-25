@@ -27,7 +27,7 @@ struct PassPhoneAnimation: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 60)
-                .foregroundColor(.indigo)
+                .foregroundColor(CustomColors.primaryButton)
                 .offset(x: arrowOffset)
                 .opacity(arrowOpacity)
         }

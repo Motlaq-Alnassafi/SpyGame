@@ -15,7 +15,7 @@ struct SecondaryButton: View {
     var body: some View {
         Button(action: action) {
             Text(text)
-                .font(.headline)
+                .font(.system(size: 20))
                 .fontWeight(.semibold)
                 .foregroundColor(color)
                 .frame(height: 56)
