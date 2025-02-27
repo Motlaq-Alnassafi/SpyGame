@@ -60,7 +60,7 @@
 "Cancel" = "Cancel";
 "ConfirmVote" = "Confirm Vote";
 "Vote" = "Vote";
-"remaining" = "remaining";
+"remaining" = "Time Remaining";
 "questionmark" = "questionmark";
 "Setup" = "Setup";
 "RuleSection1" = "1. Each player gets a secret card with a location.\n2. Most players get the same location, but the spy gets a different one.\n3. The spy doesn't know who the other players are, and the other players don't know who the spy is.";
@@ -71,7 +71,8 @@
 "Tips" = "Tips";
 "RuleSection4" = "• Ask questions that would be obvious to someone who knows the location.\n• Pay attention to hesitation or vague answers.\n• If you're the spy, listen carefully to gather clues about the location.";
 "GameRules" = "Game Rules";
-
+"chevron.left" = "chevron.left";
+"chevron.right" = "chevron.right";
 
 
 
