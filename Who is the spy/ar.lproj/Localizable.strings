@@ -72,7 +72,10 @@
 "GameRules" =  "قوانين اللعبة";
 "chevron.left" = "chevron.right";
 "chevron.right" = "chevron.left";
-
+"AreYouSure" = "هل أنت متأكد؟";
+"Yes" = "نعم";
+"Areyousure" = "هل أنت متأكد";
+"isASpy" = "هو الجاسوس؟";
 
 
 //locations
@@ -158,4 +161,4 @@
 "ParkingLot" = "موقف سيارات";
 "GasStation" = "محطة وقود";
 "CarWash" = "مغسلة سيارات";
-"Elevator" = "أسنسير";
+"Elevator" = "أصنصير";

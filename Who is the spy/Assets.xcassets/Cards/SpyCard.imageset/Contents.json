@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "SpyCard.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
