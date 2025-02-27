@@ -20,11 +20,15 @@ struct SecondaryButton: View {
                 .foregroundColor(color)
                 .frame(height: 56)
                 .frame(maxWidth: .infinity)
-                .background(color.opacity(0.1))
+                .background(
+                    LinearGradient(gradient: Gradient(colors: [Color(hex: "#FF6600").opacity(0.10), Color(hex: "#AE1C00").opacity(0.10), Color(hex: "#AE1C00").opacity(0.10)]),
+                                   startPoint: .top,
+                                   endPoint: .bottom)
+                )
                 .cornerRadius(16)
                 .overlay(
                     RoundedRectangle(cornerRadius: 16)
-                        .stroke(color.opacity(0.3), lineWidth: 1)
+                        .stroke(Color(hex: "#FF6600"), lineWidth: 1)
                 )
         }
     }

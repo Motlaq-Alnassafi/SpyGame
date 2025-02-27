@@ -16,7 +16,7 @@ struct IntroView: View {
         VStack(spacing: .zero) {
             makeGlobeButton()
                 .frame(maxWidth: .infinity, alignment: .trailing)
-                .padding(.trailing, 30)
+                .padding(.trailing)
                 .padding(.top, 20)
                 .padding(.bottom, 20)
 
@@ -24,13 +24,13 @@ struct IntroView: View {
                 .padding(.bottom, 36)
 
             VStack(spacing: 20) {
-                FeatureRow(icon: "person.3.fill",
+                FeatureRow(icon: "GroupPlay",
                            title: "GroupPlay".localized,
                            description: "GroupPlayDescription".localized)
-                FeatureRow(icon: "map.fill",
+                FeatureRow(icon: "SecretLocations",
                            title: "SecretLocations".localized,
                            description: "uniqueLocations".localized)
-                FeatureRow(icon: "timer",
+                FeatureRow(icon: "TimeRounds",
                            title: "TimedRounds".localized,
                            description: "TimedRoundsDescribtion".localized)
             }
@@ -41,7 +41,7 @@ struct IntroView: View {
             PrimaryButton(text: "StartPlaying".localized, color: .indigo) {
                 viewModel.showingIntro = false
             }
-            .padding(.horizontal, 48)
+            .padding(.horizontal)
             .padding(.bottom, 32)
         }
     }

@@ -25,12 +25,12 @@ class GameViewModel: ObservableObject {
     @Published var editablePlayerName = ""
     @Published var playerCount = 0
     @Published var spyCount = 0
-    @Published var emoji = ""
 
-    private var locations = Location.locations
+    private var locations = Location.generalLocations // can choose general or locations
     private var currentLocation: Location?
     private var usedEmojis = Set<String>()
     private var currentIndex = 0
+    var audioManager = AudioManager()
 
     enum GameState {
         case setup
@@ -55,7 +55,7 @@ class GameViewModel: ObservableObject {
     }
 
     func setupGame(playerCount: Int, spyCount: Int) {
-        guard playerCount >= 3 && spyCount >= 1 && spyCount < playerCount else { return }
+        guard spyCount < (playerCount + 1) / 2 else { return }
         currentLocation = getLocation()
         usedEmojis.removeAll()
 
@@ -116,15 +116,13 @@ class GameViewModel: ObservableObject {
 
     func viewCurrentPlayerRole() {
         guard currentPlayerIndex >= 0 && currentPlayerIndex < players.count else { return }
-        emoji = ""
         players[currentPlayerIndex].hasViewedRole = true
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) { [weak self] in
-            guard let self = self else { return }
-            emoji = getPlayerRoleEmoji(players[currentPlayerIndex])
-        }
     }
 
     func startGame() {
+        if soundEffects {
+            audioManager.playSound("gameSound")
+        }
         gameState = .playing
         startTimer()
     }
@@ -152,7 +150,7 @@ class GameViewModel: ObservableObject {
             }
     }
 
-    func resetGame() {
+    func backToGameSetup() {
         players = []
         gameState = .setup
         currentPlayerIndex = -1
@@ -178,11 +176,7 @@ class GameViewModel: ObservableObject {
     }
 
     func getLocationEmoji() -> String {
-        return currentLocation?.emoji ?? "🏠"
-    }
-
-    func getLocationColor() -> Color {
-        return currentLocation?.color ?? .blue
+        return currentLocation?.emoji ?? ""
     }
 
     func getPlayerRoleDescription(_ player: Player) -> String {
@@ -195,17 +189,9 @@ class GameViewModel: ObservableObject {
 
     func getPlayerRoleEmoji(_ player: Player) -> String {
         if player.isSpy {
-            return "🕵️"
+            return "SpyCard"
         } else {
-            return currentLocation?.emoji ?? "🏠"
-        }
-    }
-
-    func getRoleColor(_ player: Player) -> Color {
-        if player.isSpy {
-            return .gray
-        } else {
-            return currentLocation?.color ?? .blue
+            return currentLocation?.emoji ?? ""
         }
     }
 }

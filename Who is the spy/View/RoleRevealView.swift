@@ -13,9 +13,21 @@ struct RoleRevealView: View {
     @State private var showRole = false
     @State private var cardRotation = 0.0
     @State private var tapped = false
+    @State private var showAlert = false
 
     var body: some View {
         VStack(spacing: 24) {
+            CustomNavigationBarView(leftIcon: "house",
+                                    leftAction: { showAlert = true }).alert("AreYouSure".localized, isPresented: $showAlert) {
+                Button("Cancel", role: .cancel) {}
+                Button("Yes".localized, role: .destructive) {
+                    viewModel.showingIntro = true
+                    viewModel.gameState = .setup
+                }
+            }
+            .padding(.top, 20)
+            .padding(.bottom, -24)
+
             if viewModel.currentPlayerIndex < 0 {
                 VStack(spacing: 24) {
                     Text("🎭")
@@ -42,7 +54,7 @@ struct RoleRevealView: View {
                     PrimaryButton(text: "RoleRevealCTA".localized, color: .indigo) {
                         viewModel.nextPlayer()
                     }
-                    .padding(.horizontal, 32)
+                    .padding(.horizontal)
                     .padding(.bottom, 32)
                 }
             } else if viewModel.currentPlayerIndex < viewModel.players.count {
@@ -73,7 +85,7 @@ struct RoleRevealView: View {
                             viewModel.updatePlayerName(newName: viewModel.editablePlayerName)
                             showRole = true
                         }
-                        .padding(.horizontal, 32)
+                        .padding(.horizontal)
                         .padding(.bottom, 32)
                         .disabled(viewModel.editablePlayerName.isEmpty)
                     }
@@ -87,60 +99,14 @@ struct RoleRevealView: View {
                             .font(.system(size: 32, weight: .bold, design: .rounded))
                             .foregroundColor(.white)
 
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 24)
-                                .fill(
-                                    LinearGradient(
-                                        gradient: Gradient(colors: [viewModel.getRoleColor(player).opacity(0.6), viewModel.getRoleColor(player).opacity(0.8)]),
-                                        startPoint: .topLeading,
-                                        endPoint: .bottomTrailing
-                                    )
-                                )
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 24)
-                                        .stroke(Color.white.opacity(0.3), lineWidth: 1)
-                                )
-                                .shadow(color: Color.black.opacity(0.2), radius: 10)
-                                .rotation3DEffect(
-                                    .degrees(cardRotation),
-                                    axis: (x: 0, y: 1, z: 0)
-                                )
-                                .overlay(
-                                    VStack(spacing: 16) {
-                                        if showRole {
-                                            Text(viewModel.emoji)
-                                                .font(.system(size: 48))
+                        Spacer()
 
-                                            Text(viewModel.getPlayerRoleDescription(player))
-                                                .font(.headline)
-                                                .multilineTextAlignment(.center)
-                                                .foregroundColor(.white)
-                                                .padding(.horizontal)
-                                        } else {
-                                            Text("TapToRevealYourRole".localized)
-                                                .font(.headline)
-                                                .foregroundColor(.white)
-                                        }
-                                    }
-                                )
-                        }
-                        .frame(height: 280)
-                        .padding(.horizontal, 32)
-                        .onTapGesture {
-                            if !tapped {
-                                withAnimation(.easeInOut(duration: 0.4)) {
-                                    cardRotation += showRole == false ? 180 : 0
-                                    showRole = true
-                                    viewModel.viewCurrentPlayerRole()
-                                    tapped = true
-                                }
-                            }
-                        }
+                        cardView(player: player)
 
                         Spacer()
 
                         if showRole {
-                            PrimaryButton(text: "NextPlayer".localized, color: viewModel.getRoleColor(player)) {
+                            PrimaryButton(text: "NextPlayer".localized) {
                                 withAnimation {
                                     tapped = false
                                     showRole = false
@@ -148,10 +114,73 @@ struct RoleRevealView: View {
                                     viewModel.nextPlayer()
                                 }
                             }
-                            .padding(.horizontal, 32)
+                            .padding(.horizontal)
                             .padding(.bottom, 32)
                         }
                     }
+                }
+            }
+        }
+    }
+
+    @ViewBuilder
+    func cardView(player: Player) -> some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 24)
+                .fill(
+                    LinearGradient(
+                        gradient: Gradient(colors: [Color(hex: "#1A0A00"), Color(hex: "120600"), Color(hex: "#0A0400"), Color(hex: "#0A0400")]),
+
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    )
+                )
+                .overlay(
+                    RoundedRectangle(cornerRadius: 24)
+                        .stroke(Color(hex: "#FF7519"), lineWidth: 1)
+                )
+                .shadow(color: Color.black.opacity(0.2), radius: 10)
+                .rotation3DEffect(
+                    .degrees(cardRotation),
+                    axis: (x: 0, y: 1, z: 0)
+                )
+                .overlay(
+                    VStack(spacing: 16) {
+                        if showRole {
+                            Image(viewModel.getPlayerRoleEmoji(player))
+                                .resizable()
+                                .frame(width: viewModel.players[viewModel.currentPlayerIndex].isSpy ? 70 : 80, height: 80)
+
+                            Text(viewModel.getPlayerRoleDescription(player))
+                                .font(.headline)
+                                .multilineTextAlignment(.center)
+                                .foregroundColor(.white)
+                                .padding(.horizontal)
+                        } else {
+                            Text("TapToRevealYourRole".localized)
+                                .font(.headline)
+                                .foregroundColor(.white)
+                                .padding(.top, 25)
+
+                            Spacer()
+
+                            Image("QuestionMark")
+                                .resizable()
+                                .frame(width: 80, height: 124, alignment: .bottom)
+                                .padding(.bottom, 100)
+                        }
+                    }
+                )
+        }
+        .frame(height: 400)
+        .padding(.horizontal, 75)
+        .onTapGesture {
+            if !tapped {
+                withAnimation(.easeInOut(duration: 0.4)) {
+                    cardRotation += showRole == false ? 180 : 0
+                    showRole = true
+                    viewModel.viewCurrentPlayerRole()
+                    tapped = true
                 }
             }
         }

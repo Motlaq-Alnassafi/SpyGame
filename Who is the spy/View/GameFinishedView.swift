@@ -14,20 +14,22 @@ struct GameFinishedView: View {
     var body: some View {
         VStack(spacing: 32) {
             VStack(spacing: 16) {
-                Text(viewModel.winnerRole.contains("Spies") || viewModel.winnerRole.contains("الجواسيس") ? "🕵️" : "👥")
-                    .font(.system(size: 64))
+                Image(viewModel.winnerRole.contains("Spies") || viewModel.winnerRole.contains("الجواسيس") ? "SpiesWin" : "RegularPlayersWin")
+                    .resizable()
+                    .frame(width: 138, height: 100)
 
                 Text(viewModel.winnerRole)
                     .font(.system(size: 32, weight: .bold, design: .rounded))
                     .foregroundColor(.white)
 
                 Text("TheLocationWas".localized)
-                    .font(.subheadline)
-                    .foregroundColor(.white.opacity(0.7))
+                    .font(.system(size: 16))
+                    .foregroundColor(.white)
 
                 HStack(spacing: 8) {
-                    Text(viewModel.getLocationEmoji())
-                        .font(.system(size: 24))
+                    Image(viewModel.getLocationEmoji())
+                        .resizable()
+                        .frame(width: 24, height: 24)
 
                     Text(viewModel.getLocationName())
                         .font(.title2)
@@ -35,19 +37,25 @@ struct GameFinishedView: View {
                         .foregroundColor(.white)
                 }
                 .padding()
-                .background(Color.white.opacity(0.1))
+                .background(Gradient(colors: [Color(hex: "#140600"), Color(hex: "#5C2500")]))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 16)
+                        .stroke(Color(hex: "#FF7519"), lineWidth: 1)
+                )
                 .cornerRadius(16)
+                .padding(.bottom, -16)
             }
-            ScrollView {
-                VStack(alignment: .leading, spacing: 16) {
-                    Text("PlayerRoles".localized)
-                        .font(.headline)
-                        .foregroundColor(.white)
 
+            VStack(alignment: .leading, spacing: 16) {
+                Text("PlayerRoles".localized)
+                    .font(.system(size: 16))
+                    .foregroundColor(.white)
+                ScrollView {
                     ForEach(viewModel.players) { player in
                         HStack(spacing: 12) {
-                            Text(player.emoji)
-                                .font(.system(size: 24))
+                            Image(player.emoji)
+                                .resizable()
+                                .frame(width: 32, height: 32)
 
                             VStack(alignment: .leading, spacing: 4) {
                                 Text(player.name)
@@ -61,16 +69,22 @@ struct GameFinishedView: View {
 
                             Spacer()
 
-                            Image(systemName: player.isSpy ? "eye.fill" : "person.fill")
-                                .foregroundColor(player.isSpy ? .red : .green)
+                            Image(player.isSpy ? "spyList" : "Player")
                         }
                         .padding()
-                        .background(Color.white.opacity(0.1))
+                        .background(
+                            RoundedRectangle(cornerRadius: 16)
+                                .fill(CustomColors.innerBackground)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 16)
+                                        .stroke(Color(hex: "#191919"), lineWidth: 1)
+                                )
+                        )
                         .cornerRadius(12)
                     }
                 }
-                .padding()
             }
+            .padding()
 
             Spacer()
 
@@ -80,10 +94,10 @@ struct GameFinishedView: View {
                 }
 
                 SecondaryButton(text: "ChangePlayers".localized, color: .white) {
-                    viewModel.resetGame()
+                    viewModel.backToGameSetup()
                 }
             }
-            .padding(.horizontal, 32)
+            .padding(.horizontal)
             .padding(.bottom, 32)
         }
         .padding(.top, 32)

@@ -11,7 +11,6 @@ import SwiftUICore
 struct GamePlayView: View {
     @ObservedObject var viewModel: GameViewModel
     @State private var showLocationList = false
-    @State private var showTimer = true
 
     var formattedTime: String {
         let minutes = viewModel.remainingSeconds / 60
@@ -20,123 +19,47 @@ struct GamePlayView: View {
     }
 
     var body: some View {
-        VStack(spacing: 0) {
+        VStack(spacing: 16) {
             VStack {
-                if showTimer {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 20)
+//                            .fill(Gradient(colors: [Color(hex: "#131313"), Color(hex: "#0C321C")]))
+                        .fill(CustomColors.innerBackground)
+                        .frame(height: 290)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 20)
+//                                    .stroke(Color.green.opacity(0.2), lineWidth: 1)
+                                .stroke(Color.white.opacity(0.2), lineWidth: 1)
+                        )
+                        .shadow(color: .black.opacity(0.5), radius: 10, x: 0, y: 5)
                     ZStack {
                         Circle()
-                            .stroke(Color.white.opacity(0.1), lineWidth: 8)
+                            .stroke(Color.white.opacity(0.1), lineWidth: 4)
 
                         Circle()
                             .trim(from: 0, to: Double(viewModel.remainingSeconds) / (8 * 60))
-                            .stroke(
-                                viewModel.remainingSeconds < 60 ? Color.red :
-                                    viewModel.remainingSeconds < 120 ? Color.orange : Color.blue,
-                                style: StrokeStyle(lineWidth: 8, lineCap: .round)
-                            )
+//                                .stroke(Color(hex: "#0CF25D"),
+                            .stroke(Color(hex: "#FF6600"),
+                                    style: StrokeStyle(lineWidth: 4, lineCap: .round))
                             .rotationEffect(.degrees(-90))
 
                         VStack(spacing: 4) {
-                            Text(formattedTime)
-                                .font(.system(size: 32, weight: .bold, design: .monospaced))
-                                .foregroundColor(.white)
-
                             Text("remaining".localized)
-                                .font(.caption)
+                                .font(.system(size: 16, weight: .medium, design: .serif))
                                 .foregroundColor(.white.opacity(0.7))
+                            Text(formattedTime)
+                                .font(.system(size: 48, weight: .medium, design: .serif))
+                                .foregroundColor(.white)
                         }
                     }
-                    .frame(width: 120, height: 120)
+                    .frame(width: 176, height: 176)
                     .padding(.vertical)
                 }
-            }
-            .onTapGesture {
-                withAnimation {
-                    showTimer.toggle()
-                }
+                .frame(width: 290, height: 290)
             }
 
             ScrollView {
-                VStack(spacing: 24) {
-                    VStack {
-                        Button(action: {
-                            withAnimation {
-                                showLocationList.toggle()
-                            }
-                        }) {
-                            HStack {
-                                Text("Possible Locations")
-                                    .font(.headline)
-                                    .foregroundColor(.white)
-
-                                Spacer()
-
-                                Image(systemName: showLocationList ? "chevron.up" : "chevron.down")
-                                    .foregroundColor(.white.opacity(0.7))
-                            }
-                            .padding()
-                            .background(Color.white.opacity(0.1))
-                            .cornerRadius(16)
-                        }
-
-                        if showLocationList {
-                            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 16) {
-                                ForEach(Location.locations) { location in
-                                    VStack(spacing: 8) {
-                                        Text(location.emoji)
-                                            .font(.system(size: 32))
-
-                                        Text(location.name)
-                                            .font(.headline)
-                                            .foregroundColor(.white)
-                                    }
-                                    .frame(maxWidth: .infinity)
-                                    .padding()
-                                    .background(Color.white.opacity(0.1))
-                                    .cornerRadius(12)
-                                }
-                            }
-                        }
-                    }
-                    .padding(.horizontal)
-
-                    VStack(alignment: .leading, spacing: 16) {
-                        Text("SuggestedQuestions".localized)
-                            .font(.headline)
-                            .foregroundColor(.white)
-
-                        VStack(alignment: .leading, spacing: 12) {
-                            QuestionSuggestion(
-                                question: "SuggestedQuestion1".localized,
-                                tip: "SuggestedTip1".localized
-                            )
-
-                            QuestionSuggestion(
-                                question: "SuggestedQuestion2".localized,
-                                tip: "SuggestedTip2".localized
-                            )
-
-                            QuestionSuggestion(
-                                question: "SuggestedQuestion3".localized,
-                                tip: "SuggestedTip3".localized
-                            )
-
-                            QuestionSuggestion(
-                                question: "SuggestedQuestion4".localized,
-                                tip: "SuggestedTip4".localized
-                            )
-
-                            QuestionSuggestion(
-                                question: "SuggestedQuestion5".localized,
-                                tip: "SuggestedTip5".localized
-                            )
-                        }
-                    }
-                    .padding()
-                    .background(Color.white.opacity(0.1))
-                    .cornerRadius(16)
-                    .padding(.horizontal)
-                }
+                SuggestedQuestionsView()
             }
 
             VStack(spacing: 16) {

@@ -29,15 +29,16 @@ struct VotingSheetView: View {
                         .foregroundColor(.white.opacity(0.7))
 
                     ScrollView {
-                        LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 16) {
+                        LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())], spacing: 12) {
                             ForEach(viewModel.players) { player in
                                 Button(action: {
                                     selectedPlayer = player
                                     showConfirmation = true
                                 }) {
                                     VStack(spacing: 12) {
-                                        Text(player.emoji)
-                                            .font(.system(size: 40))
+                                        Image(player.emoji)
+                                            .resizable()
+                                            .frame(width: 32, height: 32)
 
                                         Text(player.name)
                                             .font(.headline)
@@ -47,9 +48,12 @@ struct VotingSheetView: View {
                                     .frame(maxWidth: .infinity)
                                     .padding()
                                     .background(
-                                        selectedPlayer?.id == player.id ?
-                                            Color.red.opacity(0.3) :
-                                            Color.white.opacity(0.1)
+                                        RoundedRectangle(cornerRadius: 18)
+                                            .fill(selectedPlayer?.id == player.id ? Gradient(colors: [Color(hex: "#140600"), Color(hex: "#5C2500")]) : Gradient(colors: [Color(hex: "#0B0B0B")]))
+                                            .overlay(
+                                                RoundedRectangle(cornerRadius: 18)
+                                                    .stroke(selectedPlayer?.id == player.id ? Color(hex: "#471D00") : Color(hex: "#191919"), lineWidth: 1)
+                                            )
                                     )
                                     .cornerRadius(16)
                                 }
@@ -66,7 +70,7 @@ struct VotingSheetView: View {
         .alert(isPresented: $showConfirmation) {
             Alert(
                 title: Text("ConfirmVote".localized),
-                message: Text("Are you sure \(selectedPlayer?.name ?? "") is a spy?"),
+                message: Text("\("Areyousure".localized) \(selectedPlayer?.name ?? "") \("isASpy".localized)"),
                 primaryButton: .destructive(Text("Vote".localized)) {
                     isPresented = false
                     if let player = selectedPlayer {

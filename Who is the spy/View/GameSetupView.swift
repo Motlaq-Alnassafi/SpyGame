@@ -16,15 +16,25 @@ struct GameSetupView: View {
 
     var body: some View {
         VStack(spacing: .zero) {
-            customNavigationBar()
+            CustomNavigationBarView(leftIcon: "house",
+                                    rightIcon: "questionmark".localized,
+                                    leftAction: { viewModel.showingIntro = true },
+                                    rightAction: { showingRules = true })
                 .padding(.top, 20)
 
-            LogoCardView(title: "GameSetup".localized, logoFrame: 80, logoPadding: 10, frameHeight: 170, frameWidth: 200)
+            LogoCardView(title: "GameSetup".localized,
+                         logoFrame: 80,
+                         logoPadding: 10,
+                         frameHeight: 170,
+                         frameWidth: 200)
                 .padding(.top, 32)
 
             VStack(spacing: 12) {
                 VStack(alignment: .leading, spacing: 18) {
-                    HStack {
+                    HStack(spacing: .zero) {
+                        Image("PlayerSettingPage")
+                            .resizable()
+                            .frame(width: 32, height: 32)
                         Text("\("Players".localized)")
                             .font(.system(size: 16, weight: .bold))
                             .foregroundColor(.white)
@@ -41,6 +51,9 @@ struct GameSetupView: View {
 
                 VStack(alignment: .leading, spacing: 18) {
                     HStack {
+                        Image("SpySettingPage")
+                            .resizable()
+                            .frame(width: 32, height: 32)
                         Text("\("Spies".localized)")
                             .font(.system(size: 16, weight: .bold))
                             .foregroundColor(.white)
@@ -71,50 +84,28 @@ struct GameSetupView: View {
 
             Spacer()
 
-            PrimaryButton(text: "StartGame".localized, color: .indigo) {
+            Button(action: {
                 viewModel.playerCount = playerCount
                 viewModel.spyCount = spyCount
                 viewModel.setupGame(playerCount: playerCount, spyCount: spyCount)
+            }) {
+                Text("StartGame".localized)
+                    .font(.system(size: 20))
+                    .fontWeight(.semibold)
+                    .foregroundColor(spyCount < (playerCount + 1) / 2 ? CustomColors.textColor : CustomColors.textColor.opacity(0.15))
+                    .frame(height: 56)
+                    .frame(maxWidth: .infinity)
+                    .background(spyCount < (playerCount + 1) / 2 ? CustomColors.primaryButton : CustomColors.primaryButton.opacity(0.15))
+                    .cornerRadius(16)
+                    .shadow(color: Color.orange.opacity(0.2), radius: 10, x: 0, y: 5)
             }
+            .disabled(spyCount < (playerCount + 1) / 2 ? false : true)
             .frame(alignment: .bottom)
-            .padding(.horizontal, 48)
+            .padding(.horizontal)
             .padding(.bottom, 32)
         }
         .fullScreenCover(isPresented: $showingRules) {
             GameRulesView()
-        }
-    }
-
-    @ViewBuilder
-    func customNavigationBar() -> some View {
-        VStack(spacing: .zero) {
-            HStack(spacing: .zero) {
-                makeNavigationSectionButton(icon: "house", action: { viewModel.showingIntro = true })
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.leading, 30)
-                makeNavigationSectionButton(icon: "questionmark".localized, action: { showingRules = true })
-                    .frame(maxWidth: .infinity, alignment: .trailing)
-                    .padding(.trailing, 30)
-            }
-        }
-    }
-
-    @ViewBuilder
-    func makeNavigationSectionButton(icon: String, action: @escaping (() -> Void)) -> some View {
-        Button(action: action) {
-            Image(systemName: icon)
-                .font(.system(size: 20))
-                .foregroundColor(.white)
-                .frame(width: 40, height: 40)
-                .background(
-                    RoundedRectangle(cornerRadius: 9)
-                        .fill(CustomColors.innerBackground)
-                        .shadow(color: Color.black.opacity(0.3), radius: 2, x: 0, y: 1)
-                )
-                .overlay(
-                    RoundedRectangle(cornerRadius: 12)
-                        .stroke(Color.white.opacity(0.15), lineWidth: 1)
-                )
         }
     }
 }

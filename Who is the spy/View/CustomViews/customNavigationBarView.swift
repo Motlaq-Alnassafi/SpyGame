@@ -17,12 +17,12 @@ struct CustomNavigationBarView: View {
                 if let leftIcon = leftIcon {
                     makeNavigationSectionButton(icon: leftIcon, action: leftAction)
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.leading, 30)
+                        .padding(.leading)
                 }
                 if let rightIcon = rightIcon {
                     makeNavigationSectionButton(icon: rightIcon, action: rightAction)
                         .frame(maxWidth: .infinity, alignment: .trailing)
-                        .padding(.trailing, 30)
+                        .padding(.trailing)
                 }
             }
         }

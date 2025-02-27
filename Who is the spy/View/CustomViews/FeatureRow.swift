@@ -19,7 +19,7 @@ struct FeatureRow: View {
                     .fill(CustomColors.mostInnerBackground)
                     .frame(width: 50, height: 50)
 
-                Image(systemName: icon)
+                Image(icon)
                     .foregroundColor(.white)
                     .font(.system(size: 24))
             }
@@ -44,6 +44,5 @@ struct FeatureRow: View {
                         .stroke(Color.white.opacity(0.15), lineWidth: 1)
                 )
         )
-        .padding(.horizontal)
     }
 }
