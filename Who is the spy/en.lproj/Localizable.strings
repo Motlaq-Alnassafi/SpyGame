@@ -82,7 +82,6 @@
 
 
 
-
 // Locations
 "TheSun" = "The Sun";
 "Church" = "Church";
@@ -97,8 +96,8 @@
 "TheMoon" = "The Moon"; 
 "Haven" = "Haven"; 
 "Farm" = "Farm"; 
-"LuandryMat" = "Luandry Mat"; 
-"CarDealerShip" = "Car Dealer Ship"; 
+"LaundryMat" = "Laundry Mat"; 
+"CarDealerShip" = "Car Dealer Ship";
 "BarbarShop" = "Barbar Shop";
 "SuperMarket" = "Super Market"; 
 "JACC" = "Jaber Al-Ahmad Cultural Center"; 
@@ -125,7 +124,7 @@
 "AlKoutMall" = "Al Kout Mall";
 "FishMarket" = "Fish Market";
 "MuroojComplex" = "Murooj Complex";
-"IceSkatingRink" = "Ice Skating Rink";
+"IceSkatingRing" = "Ice Skating Ring";
 "KuwaitOperaHouse" = "Kuwait Opera House";
 "KuwaitInternationalAirport" = "Kuwait International Airport";
 "JaberInternationalStadium" = "Jaber International Stadium";
@@ -167,6 +166,13 @@
 "GasStation" = "Gas Station";
 "CarWash" = "Car Wash";
 "Elevator" = "Elevator";
+"Funeral" = "Funeral";
+"PoliceStop" = "Police Stop";
+"Jail" = "Jail";
+"AirPlane" = "Air Plane";
+"Submarine" = "Submarine";
+"GraveYard" = "Grave Yard";
+"BeautySalon" = "Beauty Salon";
 
 
 

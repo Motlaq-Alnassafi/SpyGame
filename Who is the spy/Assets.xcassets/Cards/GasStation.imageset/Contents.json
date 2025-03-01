@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "GasStation.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

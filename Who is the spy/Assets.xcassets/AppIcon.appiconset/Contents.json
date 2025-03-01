@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "Who_is_the_Spy_App_Icon_Enlarged.png",
+      "filename" : "App-Icon-Resized 2.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
@@ -13,7 +13,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "Who_is_the_Spy_App_Icon_Enlarged 1.png",
+      "filename" : "App-Icon-Resized 1.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
@@ -25,7 +25,7 @@
           "value" : "tinted"
         }
       ],
-      "filename" : "Who_is_the_Spy_App_Icon_Enlarged 2.png",
+      "filename" : "App-Icon-Resized.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"

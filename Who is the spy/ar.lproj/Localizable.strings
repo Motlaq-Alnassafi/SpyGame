@@ -92,7 +92,7 @@
 "TheMoon" = "القمر";
 "Haven" = "الجنة";
 "Farm" = "المزرعة";
-"LuandryMat" = "مصبغه ملابس";
+"LaundryMat" = "مصبغه ملابس";
 "CarDealerShip" = "وكالة سيارات";
 "BarbarShop" = "حلاق";
 "SuperMarket" = "جمعية";
@@ -120,7 +120,7 @@
 "AlKoutMall" = "مجمع الكوت";
 "FishMarket" = "سوق السمك";
 "MuroojComplex" = "مجمع مروج";
-"IceSkatingRink" = "حلبة التزلج على الجليد";
+"IceSkatingRing" = "حلبة التزلج على الجليد";
 "KuwaitOperaHouse" = "دار الأوبرا الكويتية";
 "KuwaitInternationalAirport" = "مطار الكويت الدولي";
 "JaberInternationalStadium" = "استاد جابر الأحمد الدولي";
@@ -162,3 +162,10 @@
 "GasStation" = "محطة وقود";
 "CarWash" = "مغسلة سيارات";
 "Elevator" = "أصنصير";
+"Funeral" = "جنازة";
+"PoliceStop" = "تفتيش شرطة";
+"Jail" = "سجن";
+"AirPlane" = "طائرة";
+"Submarine" = "غواصة";
+"GraveYard" = "مقبرة";
+"BeautySalon" = "صالون تجميل نسائي";
