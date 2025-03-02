@@ -25,14 +25,15 @@ class GameViewModel: ObservableObject {
     @Published var editablePlayerName = ""
     @Published var playerCount = 0
     @Published var spyCount = 0
+    @Published var locations: [Location] = Location.generalLocations
 
-    private var locations = Location.generalLocations // can choose general or locations
     private var currentLocation: Location?
     private var usedEmojis = Set<String>()
     private var currentIndex = 0
     var audioManager = AudioManager()
 
     enum GameState {
+        case gameType
         case setup
         case roleReveal
         case playing
@@ -176,7 +177,7 @@ class GameViewModel: ObservableObject {
     }
 
     func getLocationEmoji() -> String {
-        return currentLocation?.emoji ?? ""
+        return currentLocation?.emoji ?? "School"
     }
 
     func getPlayerRoleDescription(_ player: Player) -> String {
@@ -191,7 +192,7 @@ class GameViewModel: ObservableObject {
         if player.isSpy {
             return "SpyCard"
         } else {
-            return currentLocation?.emoji ?? ""
+            return currentLocation?.emoji ?? "Player"
         }
     }
 }

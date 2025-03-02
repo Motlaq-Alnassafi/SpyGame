@@ -20,6 +20,8 @@ struct SpyGameView: View {
                     } else {
                         GameSetupView(viewModel: viewModel)
                     }
+                case .gameType:
+                    SelectGameTypeView(viewModel: viewModel)
                 case .roleReveal:
                     RoleRevealView(viewModel: viewModel)
                 case .playing:

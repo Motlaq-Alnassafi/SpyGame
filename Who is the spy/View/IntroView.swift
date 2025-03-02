@@ -40,6 +40,7 @@ struct IntroView: View {
 
             PrimaryButton(text: "StartPlaying".localized, color: .indigo) {
                 viewModel.showingIntro = false
+                viewModel.gameState = .gameType
             }
             .padding(.horizontal)
             .padding(.bottom, 32)

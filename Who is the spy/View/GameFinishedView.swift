@@ -12,7 +12,7 @@ struct GameFinishedView: View {
     @ObservedObject var viewModel: GameViewModel
 
     var body: some View {
-        VStack(spacing: 32) {
+        VStack(spacing: .zero) {
             VStack(spacing: 16) {
                 Image(viewModel.winnerRole.contains("Spies") || viewModel.winnerRole.contains("الجواسيس") ? "SpiesWin" : "RegularPlayersWin")
                     .resizable()
@@ -45,6 +45,7 @@ struct GameFinishedView: View {
                 .cornerRadius(16)
                 .padding(.bottom, -16)
             }
+            .padding(.bottom, 32)
 
             VStack(alignment: .leading, spacing: 16) {
                 Text("PlayerRoles".localized)
