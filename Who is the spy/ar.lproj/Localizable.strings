@@ -78,6 +78,11 @@
 "isASpy" = "هو الجاسوس؟";
 
 
+// games
+"locationsInKuwait" = "مواقع في \nالكويت";
+"GeneralLocations" = "مواقع \nعامة";
+"ChooseGameType" = "اختر نوع اللعبة";
+
 //locations
 "Synagogue" = "معبد يهودي";
 "TheSun" = "الشمس";

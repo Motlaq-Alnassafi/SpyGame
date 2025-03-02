@@ -104,4 +104,3 @@ struct PageIndicator: View {
         }
     }
 }
-

@@ -78,6 +78,11 @@
 "Areyousure" = "Are you sure";
 "isASpy" = "is a spy?";
 
+// games
+"locationsInKuwait" = "Locations in \nKuwait";
+"GeneralLocations" = "General \nLocations";
+"ChooseGameType" = "Choose a game type";
+
 
 
 
