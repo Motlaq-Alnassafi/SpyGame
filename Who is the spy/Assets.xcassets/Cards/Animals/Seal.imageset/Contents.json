@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Seal.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
