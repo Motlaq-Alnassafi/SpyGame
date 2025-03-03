@@ -28,12 +28,16 @@
 "TapToRevealYourRole" = "Tap to reveal your role";
 "NextPlayer" = "Next Player";
 "Location" = "Location";
+"Area" = "Area";
+"Animal" = "Animal";
 "PlayerRoleDescription" = "Ask and answer questions without being too obvious!";
 "YouAreTheSpy" = "You are the Spy!";
 "FigureOutLocation" = "Try to figure out the location without being caught.";
 "RegularPlayer" = "Regular Player";
 "Spy" = "Spy";
 "TheLocationWas" = "The location was";
+"TheAnimalWas" = "The Animal Was";
+"TheAreaWas" = "The Area Was";
 "PlayAgain" = "Play Again";
 "ChangePlayers" = "Change Players";
 "EndGame" = "End Game";
@@ -78,14 +82,13 @@
 "Areyousure" = "Are you sure";
 "isASpy" = "is a spy?";
 
+
 // games
 "locationsInKuwait" = "Locations in \nKuwait";
 "GeneralLocations" = "General \nLocations";
 "ChooseGameType" = "Choose a game type";
-
-
-
-
+"Animals" = "Animals";
+"KuwaitAreas" = "Kuwait Areas";
 
 // Locations
 "TheSun" = "The Sun";
@@ -179,8 +182,225 @@
 "GraveYard" = "Grave Yard";
 "BeautySalon" = "Beauty Salon";
 
+//Animals
+"Camel" = "Camel";
+"Lion" = "Lion";
+"Tiger" = "Tiger";
+"Elephant" = "Elephant";
+"Horse" = "Horse";
+"Dog" = "Dog";
+"Cat" = "Cat";
+"Wolf" = "Wolf";
+"Bear" = "Bear";
+"Rabbit" = "Rabbit";
+"Monkey" = "Monkey";
+"Cow" = "Cow";
+"Sheep" = "Sheep";
+"Goat" = "Goat";
+"Eagle" = "Eagle";
+"Falcon" = "Falcon";
+"Owl" = "Owl";
+"Parrot" = "Parrot";
+"Pigeon" = "Pigeon";
+"Snake" = "Snake";
+"Lizard" = "Lizard";
+"Turtle" = "Turtle";
+"Frog" = "Frog";
+"Fish" = "Fish";
+"Shark" = "Shark";
+"Dolphin" = "Dolphin";
+"Whale" = "Whale";
+"Octopus" = "Octopus";
+"Bee" = "Bee";
+"Ant" = "Ant";
+"Butterfly" = "Butterfly";
+"Spider" = "Spider";
+"Cheetah" = "Cheetah";
+"Hippopotamus" = "Hippopotamus";
+"Rhinoceros" = "Rhinoceros";
+"Giraffe" = "Giraffe";
+"Zebra" = "Zebra";
+"Buffalo" = "Buffalo";
+"Deer" = "Deer";
+"Kangaroo" = "Kangaroo";
+"Koala" = "Koala";
+"Panda" = "Panda";
+"Hedgehog" = "Hedgehog";
+"Squirrel" = "Squirrel";
+"Bat" = "Bat";
+"Fox" = "Fox";
+"Cobra" = "Cobra";
+"Crocodile" = "Crocodile";
+"Penguin" = "Penguin";
+"Peacock" = "Peacock";
+"Flamingo" = "Flamingo";
+"Goose" = "Goose";
+"Swan" = "Swan";
+"Woodpecker" = "Woodpecker";
+"Eel" = "Eel";
+"Jellyfish" = "Jellyfish";
+"Seahorse" = "Seahorse";
+"Starfish" = "Starfish";
+"Crab" = "Crab";
+"Scorpion" = "Scorpion";
+"Beetle" = "Beetle";
+"Grasshopper" = "Grasshopper";
+"Seal" = "Seal";
+"Hyena" = "Hyena";
 
+//Kuwait areas
 
+//Asimah (Capital) Governorate:
+"Abdulla Al-Salem" = "Abdulla Al-Salem";
+"Adailiya" = "Adailiya";
+"Al-Sour Gardens" = "Al-Sour Gardens";
+"Bnaid Al-Qar" = "Bnaid Al-Qar";
+"Daiya" = "Daiya";
+"Dasma" = "Dasma";
+"Dasman" = "Dasman";
+"Doha" = "Doha";
+"Doha Port" = "Doha Port";
+"Faiha" = "Faiha";
+"Failaka Island" = "Failaka Island";
+"Granada" = "Granada";
+"Jibla" = "Jibla";
+"Kaifan" = "Kaifan";
+"Khaldiya" = "Khaldiya";
+"Mansouriya" = "Mansouriya";
+"Mirqab" = "Mirqab";
+"Nahdha" = "Nahdha";
+"North West Sulaibikhat" = "North West Sulaibikhat";
+"Nuzha" = "Nuzha";
+"Qadsiya" = "Qadsiya";
+"Qortuba" = "Qortuba";
+"Rawda" = "Rawda";
+"Shamiya" = "Shamiya";
+"Sharq" = "Sharq";
+"Shuwaikh" = "Shuwaikh";
+"Shuwaikh Industrial Area" = "Shuwaikh Industrial Area";
+"Shuwaikh Port" = "Shuwaikh Port";
+"Sulaibikhat" = "Sulaibikhat";
+"Qairawan" = "Qairawan";
+"Surra" = "Surra";
+"Ouha Island" = "Ouha Island";
+"Mischan Island" = "Mischan Island";
+"Umm an Namil Island" = "Umm an Namil Island";
+"Yarmouk" = "Yarmouk";
+"Jaber Al-Ahmed" = "Jaber Al-Ahmed";
 
+//Hawalli Governorate:
+"Bayan" = "Bayan";
+"Jabriya" = "Jabriya";
+"Rumaithiya" = "Rumaithiya";
+"Salam" = "Salam";
+"Salwa" = "Salwa";
+"Al-Bida'a" = "Al-Bida'a";
+"Anjafa" = "Anjafa";
+"Hawalli" = "Hawalli";
+"Hitteen" = "Hitteen";
+"Mishrif" = "Mishrif";
+"Mubarak Al-Abdullah" = "Mubarak Al-Abdullah";
+"Salmiya" = "Salmiya";
+"Shaab" = "Shaab";
+"Shuhada" = "Shuhada";
+"Al-Siddiq" = "Al-Siddiq";
+"Ministries Area" = "Ministries Area";
+"Zahra" = "Zahra";
 
+//Mubarak Al-Kabeer Governorate:
+"Abu Al Hasaniya" = "Abu Al Hasaniya";
+"Abu Ftaira" = "Abu Ftaira";
+"Al-Adan" = "Al-Adan";
+"Al Qurain" = "Al Qurain";
+"Al-Qusour" = "Al-Qusour";
+"Al-Fnaitees" = "Al-Fnaitees";
+"Messila" = "Messila";
+"Al-Masayel" = "Al-Masayel";
+"Mubarak Al-Kabeer" = "Mubarak Al-Kabeer";
+"Sabah Al-Salem" = "Sabah Al-Salem";
+"Subhan Industrial" = "Subhan Industrial";
+"Wista" = "Wista";
+"West Abu Ftaira Herafiya" = "West Abu Ftaira Herafiya";
 
+//Ahmadi Governorate:
+"Abu Halifa" = "Abu Halifa";
+"Mina Abdulla" = "Mina Abdulla";
+"Ahmadi" = "Ahmadi";
+"Ali Sabah Al-Salem" = "Ali Sabah Al-Salem";
+"Egaila" = "Egaila";
+"Bar Al-Ahmadi" = "Bar Al-Ahmadi";
+"Bnaider" = "Bnaider";
+"Dhaher" = "Dhaher";
+"Fahaheel" = "Fahaheel";
+"Fahad Al-Ahmad" = "Fahad Al-Ahmad";
+"Hadiya" = "Hadiya";
+"Jaber Al-Ali" = "Jaber Al-Ali";
+"Al-Julaia'a" = "Al-Julaia'a";
+"Khairan" = "Khairan";
+"Mahboula" = "Mahboula";
+"Mangaf" = "Mangaf";
+"Magwa" = "Magwa";
+"Wafra Residential" = "Wafra Residential";
+"Al-Nuwaiseeb" = "Al-Nuwaiseeb";
+"Riqqa" = "Riqqa";
+"Sabah Al Ahmad" = "Sabah Al Ahmad";
+"Sabah Al Ahmad Sea City" = "Sabah Al Ahmad Sea City";
+"Sabahiya" = "Sabahiya";
+"Shuaiba Industrial" = "Shuaiba Industrial";
+"South Sabahiya" = "South Sabahiya";
+"Wafra" = "Wafra";
+"Zoor" = "Zoor";
+"Fintas" = "Fintas";
+"Al Shadadiya Industrial" = "Al Shadadiya Industrial";
+
+//Farwaniya Governorate:
+"Abdullah Al-Mubarak" = "Abdullah Al-Mubarak";
+"Airport District" = "Airport District";
+"Andalus" = "Andalus";
+"Ardiya" = "Ardiya";
+"Ardiya Herafiya" = "Ardiya Herafiya";
+"Ishbiliya" = "Ishbiliya";
+"Al-Dajeej" = "Al-Dajeej";
+"Farwaniya" = "Farwaniya";
+"Firdous" = "Firdous";
+"Jleeb Al-Shuyoukh" = "Jleeb Al-Shuyoukh";
+"Khaitan" = "Khaitan";
+"Omariya" = "Omariya";
+"Rabiya" = "Rabiya";
+"Al-Rai" = "Al-Rai";
+"Al-Riggai" = "Al-Riggai";
+"Rehab" = "Rehab";
+"Sabah Al-Nasser" = "Sabah Al-Nasser";
+"Sabah Al-Salem University" = "Sabah Al-Salem University";
+"West Abdullah Al-Mubarak" = "West Abdullah Al-Mubarak";
+"South Abdullah Al-Mubarak" = "South Abdullah Al-Mubarak";
+"Sulaibiya" = "Sulaibiya";
+"Sulaibiya Industrial" = "Sulaibiya Industrial";
+
+//Jahra Governorate:
+"Abdali" = "Abdali";
+"Al-Mutlaa" = "Al-Mutlaa";
+"Kazma" = "Kazma";
+"Bahra" = "Bahra";
+"Kabd" = "Kabd";
+"Al-Sheqaya" = "Al-Sheqaya";
+"Al-Nahda" = "Al-Nahda";
+"Amghara Industrial" = "Amghara Industrial";
+"Bar Al-Jahra" = "Bar Al-Jahra";
+"Jahra" = "Jahra";
+"Jahra Industrial Herafiya" = "Jahra Industrial Herafiya";
+"Naeem" = "Naeem";
+"Nasseem" = "Nasseem";
+"Oyoun" = "Oyoun";
+"Qasr" = "Qasr";
+"Jaber Al-Ahmad" = "Jaber Al-Ahmad";
+"Saad Al Abdullah" = "Saad Al Abdullah";
+"Salmi" = "Salmi";
+"Subiya" = "Subiya";
+"Sulaibiya" = "Sulaibiya";
+"Sulaibiya Agricultural Area" = "Sulaibiya Agricultural Area";
+"Sulaibiya Residential" = "Sulaibiya Residential";
+"Taima" = "Taima";
+"Waha" = "Waha";
+"Bubiyan Island" = "Bubiyan Island";
+"Warbah Island" = "Warbah Island";

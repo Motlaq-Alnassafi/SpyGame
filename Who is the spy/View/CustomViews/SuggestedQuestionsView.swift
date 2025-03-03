@@ -29,34 +29,20 @@ struct SuggestedQuestionsView: View {
                 )
                 .shadow(color: .black.opacity(0.5), radius: 10, x: 0, y: 5)
 
-            VStack(alignment: .leading, spacing: 12) {
-                SuggestedQuestionCard(question: questions[currentIndex].0, icon: questions[currentIndex].1)
-
-                HStack {
-                    Button(action: {
-                        if currentIndex > 0 { currentIndex -= 1 }
-                    }) {
-                        Image(systemName: "chevron.left".localized)
-                            .foregroundColor(currentIndex == 0 ? .gray : .white)
-                            .padding(10)
+            VStack {
+                TabView(selection: $currentIndex) {
+                    ForEach(0 ..< questions.count, id: \.self) { index in
+                        SuggestedQuestionCard(question: questions[index].0, icon: questions[index].1)
+                            .tag(index)
                     }
-                    .disabled(currentIndex == 0)
-
-                    Spacer()
-
-                    PageIndicator(currentIndex: currentIndex, totalPages: questions.count)
-
-                    Spacer()
-
-                    Button(action: {
-                        if currentIndex < questions.count - 1 { currentIndex += 1 }
-                    }) {
-                        Image(systemName: "chevron.right".localized)
-                            .foregroundColor(currentIndex == questions.count - 1 ? .gray : .white)
-                            .padding(10)
-                    }
-                    .disabled(currentIndex == questions.count - 1)
                 }
+                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+
+                Spacer()
+
+                PageIndicator(currentIndex: currentIndex, totalPages: questions.count)
+                    .frame(maxWidth: .infinity)
+                    .padding(.bottom, 10)
             }
             .padding(20)
         }
@@ -69,24 +55,32 @@ struct SuggestedQuestionCard: View {
     let icon: String
 
     var body: some View {
-        Text("SuggestedQuestions".localized)
-            .foregroundColor(.white.opacity(0.6))
-            .font(.system(size: 16))
+        VStack(alignment: .leading, spacing: 10) {
+            Text("SuggestedQuestions".localized)
+                .foregroundColor(.white.opacity(0.6))
+                .font(.system(size: 16))
+                .padding(.top, 10)
 
-        Text(question)
-            .lineLimit(2)
-            .foregroundColor(.white)
-            .font(.system(size: 28))
+            Text(question)
+                .lineLimit(2)
+                .foregroundColor(.white)
+                .font(.system(size: 28))
 
-        Spacer()
+            Spacer()
 
-        Image(icon)
-            .resizable()
-            .frame(width: 80, height: 62)
-            .foregroundColor(.clear)
-            .padding(.leading, 10)
+            HStack {
+                Image(icon)
+                    .resizable()
+                    .frame(width: 80, height: 62)
+                    .foregroundColor(.clear)
 
-        Spacer()
+                Spacer()
+            }
+
+            Spacer()
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.horizontal, 0)
     }
 }
 

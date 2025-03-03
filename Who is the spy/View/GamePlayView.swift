@@ -21,24 +21,19 @@ struct GamePlayView: View {
     var body: some View {
         VStack(spacing: 16) {
             VStack {
+                Spacer()
+
                 ZStack {
-                    RoundedRectangle(cornerRadius: 20)
-//                            .fill(Gradient(colors: [Color(hex: "#131313"), Color(hex: "#0C321C")]))
+                    Circle()
                         .fill(CustomColors.innerBackground)
-                        .frame(height: 290)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 20)
-//                                    .stroke(Color.green.opacity(0.2), lineWidth: 1)
-                                .stroke(Color.white.opacity(0.2), lineWidth: 1)
-                        )
-                        .shadow(color: .black.opacity(0.5), radius: 10, x: 0, y: 5)
+                        .frame(height: 176)
+
                     ZStack {
                         Circle()
                             .stroke(Color.white.opacity(0.1), lineWidth: 4)
 
                         Circle()
                             .trim(from: 0, to: Double(viewModel.remainingSeconds) / (8 * 60))
-//                                .stroke(Color(hex: "#0CF25D"),
                             .stroke(Color(hex: "#FF6600"),
                                     style: StrokeStyle(lineWidth: 4, lineCap: .round))
                             .rotationEffect(.degrees(-90))
@@ -55,24 +50,25 @@ struct GamePlayView: View {
                     .frame(width: 176, height: 176)
                     .padding(.vertical)
                 }
-                .frame(width: 290, height: 290)
+                .frame(width: 176, height: 176)
             }
 
-            ScrollView {
-                SuggestedQuestionsView()
-            }
+            Spacer()
+
+            SuggestedQuestionsView()
+
+            Spacer()
 
             VStack(spacing: 16) {
                 PrimaryButton(text: "VoteOnSpy".localized, color: .red) {
                     viewModel.showVotingSheet = true
                 }
-                .padding(.horizontal)
 
                 SecondaryButton(text: "EndGame".localized, color: .white) {
                     viewModel.endGame(spyWins: false)
                 }
-                .padding(.horizontal)
             }
+            .padding(.horizontal)
             .padding(.vertical)
         }
         .sheet(isPresented: $viewModel.showVotingSheet) {

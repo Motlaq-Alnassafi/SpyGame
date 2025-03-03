@@ -13,6 +13,7 @@ import UIKit
 class GameViewModel: ObservableObject {
     @Published var players: [Player] = []
     @Published var gameState: GameState = .setup
+    @Published var gameType: GameType = .location
     @Published var currentPlayerIndex: Int = -1
     @Published var timer: AnyCancellable?
     @Published var remainingSeconds: Int = 8 * 60
@@ -25,9 +26,9 @@ class GameViewModel: ObservableObject {
     @Published var editablePlayerName = ""
     @Published var playerCount = 0
     @Published var spyCount = 0
-    @Published var locations: [Location] = Location.generalLocations
+    @Published var category: [CategoryItem] = CategoryItem.generalLocations
 
-    private var currentLocation: Location?
+    private var currentCategoryItem: CategoryItem?
     private var usedEmojis = Set<String>()
     private var currentIndex = 0
     var audioManager = AudioManager()
@@ -40,24 +41,30 @@ class GameViewModel: ObservableObject {
         case finished
     }
 
-    func getLocation() -> Location? {
-        guard currentIndex < locations.count else {
-            locations.shuffle()
-            currentIndex = 0
-            return returnLocation()
-        }
-        return returnLocation()
+    enum GameType {
+        case location
+        case animal
+        case kuwaitAreas
     }
 
-    func returnLocation() -> Location {
-        let location = locations[currentIndex]
+    func getCategoryItem() -> CategoryItem? {
+        guard currentIndex < category.count else {
+            category.shuffle()
+            currentIndex = 0
+            return returnCategoryItem()
+        }
+        return returnCategoryItem()
+    }
+
+    func returnCategoryItem() -> CategoryItem {
+        let location = category[currentIndex]
         currentIndex += 1
         return location
     }
 
     func setupGame(playerCount: Int, spyCount: Int) {
         guard spyCount < (playerCount + 1) / 2 else { return }
-        currentLocation = getLocation()
+        currentCategoryItem = getCategoryItem()
         usedEmojis.removeAll()
 
         var newPlayers: [Player] = []
@@ -158,7 +165,7 @@ class GameViewModel: ObservableObject {
         timer?.cancel()
         timer = nil
         remainingSeconds = 8 * 60
-        currentLocation = nil
+        currentCategoryItem = nil
         showingIntro = false
         customPlayerNames = false
     }
@@ -167,24 +174,42 @@ class GameViewModel: ObservableObject {
         timer?.cancel()
         timer = nil
         remainingSeconds = 8 * 60
-        currentLocation = nil
+        currentCategoryItem = nil
         showingIntro = false
         setupGame(playerCount: playerCount, spyCount: spyCount)
     }
 
-    func getLocationName() -> String {
-        return currentLocation?.name ?? "Unknown"
+    func getCategoryName() -> String {
+        return currentCategoryItem?.name ?? "Unknown"
     }
 
-    func getLocationEmoji() -> String {
-        return currentLocation?.emoji ?? "School"
+    func getCategoryEmoji() -> String {
+        return currentCategoryItem?.emoji ?? "School"
     }
 
     func getPlayerRoleDescription(_ player: Player) -> String {
         if player.isSpy {
             return "\("YouAreTheSpy".localized)\n\n\("FigureOutLocation".localized)"
         } else {
-            return "\("Location".localized): \(currentLocation?.name ?? "")\n\n\("PlayerRoleDescription".localized)"
+            switch gameType {
+            case .location:
+                return "\("Location".localized): \(currentCategoryItem?.name ?? "")\n\n\("PlayerRoleDescription".localized)"
+            case .animal:
+                return "\("Animal".localized): \(currentCategoryItem?.name ?? "")\n\n\("PlayerRoleDescription".localized)"
+            case .kuwaitAreas:
+                return "\("Area".localized): \(currentCategoryItem?.name ?? "")\n\n\("PlayerRoleDescription".localized)"
+            }
+        }
+    }
+
+    func getEndGameItemDescription() -> String {
+        switch gameType {
+        case .location:
+            return "TheLocationWas".localized
+        case .animal:
+            return "TheAnimalWas".localized
+        case .kuwaitAreas:
+            return "TheAreaWas".localized
         }
     }
 
@@ -192,7 +217,7 @@ class GameViewModel: ObservableObject {
         if player.isSpy {
             return "SpyCard"
         } else {
-            return currentLocation?.emoji ?? "Player"
+            return currentCategoryItem?.emoji ?? "Player"
         }
     }
 }

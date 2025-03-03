@@ -22,16 +22,16 @@ struct GameFinishedView: View {
                     .font(.system(size: 32, weight: .bold, design: .rounded))
                     .foregroundColor(.white)
 
-                Text("TheLocationWas".localized)
+                Text(viewModel.getEndGameItemDescription())
                     .font(.system(size: 16))
                     .foregroundColor(.white)
 
                 HStack(spacing: 8) {
-                    Image(viewModel.getLocationEmoji())
+                    Image(viewModel.getCategoryEmoji())
                         .resizable()
                         .frame(width: 24, height: 24)
 
-                    Text(viewModel.getLocationName())
+                    Text(viewModel.getCategoryName())
                         .font(.title2)
                         .fontWeight(.semibold)
                         .foregroundColor(.white)

@@ -23,20 +23,38 @@ struct SelectGameTypeView: View {
                 .padding(.top, 20)
 
             Text("ChooseGameType".localized)
-                .font(.system(size: 48, weight: .semibold, design: .serif))
+                .font(.system(size: 48, weight: .regular, design: .default))
                 .padding(.top, 32)
                 .padding(.horizontal)
+                .padding(.bottom)
 
             Spacer()
 
             HStack {
-                makeGameTypeButton(text: "locationsInKuwait".localized, icon: "Kuwait", action: {
-                    viewModel.locations = Location.KuwaitLocations
+                makeGameTypeButton(text: "locationsInKuwait".localized, icon: "KuwaitTowers", action: {
+                    viewModel.category = CategoryItem.KuwaitLocations
                     viewModel.gameState = .setup
+                    viewModel.gameType = .location
                 })
                 makeGameTypeButton(text: "GeneralLocations".localized, icon: "GeneralLocations", action: {
-                    viewModel.locations = Location.generalLocations
+                    viewModel.category = CategoryItem.generalLocations
                     viewModel.gameState = .setup
+                    viewModel.gameType = .location
+                })
+            }
+            .padding(.horizontal)
+            .padding(.bottom, 8)
+
+            HStack {
+                makeGameTypeButton(text: "Animals".localized, icon: "Camel", action: {
+                    viewModel.category = CategoryItem.animals
+                    viewModel.gameState = .setup
+                    viewModel.gameType = .animal
+                })
+                makeGameTypeButton(text: "KuwaitAreas".localized, icon: "Kuwait", action: {
+                    viewModel.category = CategoryItem.kuwaitAreas
+                    viewModel.gameState = .setup
+                    viewModel.gameType = .kuwaitAreas
                 })
             }
             .padding(.horizontal)
@@ -83,7 +101,8 @@ struct SelectGameTypeView: View {
                         }
                     )
             }
-            .frame(height: 400)
+            .frame(height: 250)
+            .frame(width: UIScreen.main.bounds.width / 3 * 1.25)
         }
     }
 }
