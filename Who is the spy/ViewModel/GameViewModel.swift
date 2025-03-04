@@ -118,7 +118,7 @@ class GameViewModel: ObservableObject {
         if currentPlayerIndex >= players.count {
             startGame()
         } else if customPlayerNames {
-            editablePlayerName = "Player \(currentPlayerIndex + 1)"
+            editablePlayerName = "\("Player".localized) \(currentPlayerIndex + 1)"
         }
     }
 
@@ -218,6 +218,35 @@ class GameViewModel: ObservableObject {
             return "SpyCard"
         } else {
             return currentCategoryItem?.emoji ?? "Player"
+        }
+    }
+
+    func getSuggestedQuestions() -> [(String, String)] {
+        switch gameType {
+        case .location:
+            return [
+                ("SuggestedQuestion1".localized, "eye"),
+                ("SuggestedQuestion2".localized, "ear"),
+                ("SuggestedQuestion3".localized, "activities"),
+                ("SuggestedQuestion4".localized, "groupOfPeople"),
+                ("SuggestedQuestion5".localized, "BusiestTime"),
+            ]
+        case .animal:
+            return [
+                ("SuggestedQuestionAnimal1".localized, "eye"),
+                ("SuggestedQuestionAnimal2".localized, "eye"),
+                ("SuggestedQuestionAnimal3".localized, "ear"),
+                ("SuggestedQuestionAnimal4".localized, "groupOfPeople"),
+                ("SuggestedQuestionAnimal5".localized, "activities"),
+            ]
+        case .kuwaitAreas:
+            return [
+                ("SuggestedQuestion1".localized, "eye"),
+                ("SuggestedQuestion2".localized, "ear"),
+                ("SuggestedQuestion3".localized, "activities"),
+                ("SuggestedQuestion4".localized, "groupOfPeople"),
+                ("SuggestedQuestion5".localized, "BusiestTime"),
+            ]
         }
     }
 }

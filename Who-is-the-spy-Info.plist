@@ -4,5 +4,9 @@
 <dict>
 	<key>Arabic</key>
 	<string></string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Geist.ttf</string>
+	</array>
 </dict>
 </plist>

@@ -40,10 +40,12 @@ struct GamePlayView: View {
 
                         VStack(spacing: 4) {
                             Text("remaining".localized)
-                                .font(.system(size: 16, weight: .medium, design: .serif))
+                                .font(.custom("Geist", size: 16))
+                                .fontWeight(.regular)
                                 .foregroundColor(.white.opacity(0.7))
                             Text(formattedTime)
-                                .font(.system(size: 48, weight: .medium, design: .serif))
+                                .font(.custom("Geist", size: 48))
+                                .fontWeight(.bold)
                                 .foregroundColor(.white)
                         }
                     }
@@ -55,7 +57,7 @@ struct GamePlayView: View {
 
             Spacer()
 
-            SuggestedQuestionsView()
+            SuggestedQuestionsView(viewModel: viewModel)
 
             Spacer()
 

@@ -15,7 +15,8 @@ struct CustomToggle: View {
         HStack {
             Text(text)
                 .foregroundColor(.white)
-                .font(.system(size: 16, weight: .bold))
+                .font(.custom("Geist", size: 16))
+                .fontWeight(.bold)
 
             Spacer()
 

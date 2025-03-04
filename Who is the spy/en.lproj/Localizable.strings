@@ -18,7 +18,7 @@
 "TimedRoundsDescribtion" = "8-minute gameplay with countdown";
 "Players" = "Players";
 "Spies" = "Spies";
-"HowToPlay" = "How to Play: Who's The Spy?";
+"HowToPlay" = "How to Play Who's The Spy?";
 "StartGame" = "Start Game";
 "RoleReveal" = "Time to Reveal Roles";
 "RoleRevealCTA" = "Begin Role Reveal";
@@ -44,15 +44,15 @@
 "VoteOnSpy" = "Vote on Spy";
 "SuggestedQuestions" = "Suggested Questions";
 "SuggestedQuestion1" = "What can you see around you?";
-"SuggestedTip1" = "Good opening question";
 "SuggestedQuestion2" = "What sounds do you typically hear?";
-"SuggestedTip2" = "Location atmosphere";
 "SuggestedQuestion3" = "What activities happen here?";
-"SuggestedTip3" = "Location purpose";
 "SuggestedQuestion4" = "Who would you typically see here?";
-"SuggestedTip4" = "Common visitors";
 "SuggestedQuestion5" = "What time is this place busiest?";
-"SuggestedTip5" = "Daily patterns";
+"SuggestedQuestionAnimal1" = "What does this animal usually do?";
+"SuggestedQuestionAnimal2" = "Can you describe this animal?";
+"SuggestedQuestionAnimal3" = "What sounds does this animal make?";
+"SuggestedQuestionAnimal4" = "Where does this animal usually live?";
+"SuggestedQuestionAnimal5" = "When is this animal most active?";
 "SpiesWin" = "Spies Win!";
 "RegularPlayersWin" = "Regular Players Win!";
 "PlayerRoles" = "Player Roles";
@@ -81,6 +81,9 @@
 "Yes" = "Yes";
 "Areyousure" = "Are you sure";
 "isASpy" = "is a spy?";
+"Continue" = "Continue";
+"Enter your name" = "Enter your name";
+"Who Are You?" = "Who Are You?";
 
 
 // games

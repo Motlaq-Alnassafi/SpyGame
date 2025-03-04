@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		38AF550E2D76EA0700FDD8F6 /* Geist.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 38AF550D2D76EA0700FDD8F6 /* Geist.ttf */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		388947662D686045008BB0CD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -24,9 +28,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		388947552D686044008BB0CD /* Who is the spy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Who is the spy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		388947652D686045008BB0CD /* Who is the spyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Who is the spyTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3889476F2D686045008BB0CD /* Who is the spyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Who is the spyUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		388947552D686044008BB0CD /* WHO'S THE SPY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WHO'S THE SPY.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		388947652D686045008BB0CD /* WHO'S THE SPYTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WHO'S THE SPYTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3889476F2D686045008BB0CD /* WHO'S THE SPYUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WHO'S THE SPYUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		38AF550D2D76EA0700FDD8F6 /* Geist.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Geist.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -75,6 +80,7 @@
 		3889474C2D686044008BB0CD = {
 			isa = PBXGroup;
 			children = (
+				38AF550D2D76EA0700FDD8F6 /* Geist.ttf */,
 				388947572D686044008BB0CD /* Who is the spy */,
 				388947682D686045008BB0CD /* Who is the spyTests */,
 				388947722D686045008BB0CD /* Who is the spyUITests */,
@@ -85,9 +91,9 @@
 		388947562D686044008BB0CD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				388947552D686044008BB0CD /* Who is the spy.app */,
-				388947652D686045008BB0CD /* Who is the spyTests.xctest */,
-				3889476F2D686045008BB0CD /* Who is the spyUITests.xctest */,
+				388947552D686044008BB0CD /* WHO'S THE SPY.app */,
+				388947652D686045008BB0CD /* WHO'S THE SPYTests.xctest */,
+				3889476F2D686045008BB0CD /* WHO'S THE SPYUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,9 +101,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		388947542D686044008BB0CD /* Who is the spy */ = {
+		388947542D686044008BB0CD /* WHO'S THE SPY */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 388947792D686045008BB0CD /* Build configuration list for PBXNativeTarget "Who is the spy" */;
+			buildConfigurationList = 388947792D686045008BB0CD /* Build configuration list for PBXNativeTarget "WHO'S THE SPY" */;
 			buildPhases = (
 				388947512D686044008BB0CD /* Sources */,
 				388947522D686044008BB0CD /* Frameworks */,
@@ -110,16 +116,16 @@
 			fileSystemSynchronizedGroups = (
 				388947572D686044008BB0CD /* Who is the spy */,
 			);
-			name = "Who is the spy";
+			name = "WHO'S THE SPY";
 			packageProductDependencies = (
 			);
 			productName = "Who is the spy";
-			productReference = 388947552D686044008BB0CD /* Who is the spy.app */;
+			productReference = 388947552D686044008BB0CD /* WHO'S THE SPY.app */;
 			productType = "com.apple.product-type.application";
 		};
-		388947642D686045008BB0CD /* Who is the spyTests */ = {
+		388947642D686045008BB0CD /* WHO'S THE SPYTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3889477C2D686045008BB0CD /* Build configuration list for PBXNativeTarget "Who is the spyTests" */;
+			buildConfigurationList = 3889477C2D686045008BB0CD /* Build configuration list for PBXNativeTarget "WHO'S THE SPYTests" */;
 			buildPhases = (
 				388947612D686045008BB0CD /* Sources */,
 				388947622D686045008BB0CD /* Frameworks */,
@@ -133,16 +139,16 @@
 			fileSystemSynchronizedGroups = (
 				388947682D686045008BB0CD /* Who is the spyTests */,
 			);
-			name = "Who is the spyTests";
+			name = "WHO'S THE SPYTests";
 			packageProductDependencies = (
 			);
 			productName = "Who is the spyTests";
-			productReference = 388947652D686045008BB0CD /* Who is the spyTests.xctest */;
+			productReference = 388947652D686045008BB0CD /* WHO'S THE SPYTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		3889476E2D686045008BB0CD /* Who is the spyUITests */ = {
+		3889476E2D686045008BB0CD /* WHO'S THE SPYUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3889477F2D686045008BB0CD /* Build configuration list for PBXNativeTarget "Who is the spyUITests" */;
+			buildConfigurationList = 3889477F2D686045008BB0CD /* Build configuration list for PBXNativeTarget "WHO'S THE SPYUITests" */;
 			buildPhases = (
 				3889476B2D686045008BB0CD /* Sources */,
 				3889476C2D686045008BB0CD /* Frameworks */,
@@ -156,11 +162,11 @@
 			fileSystemSynchronizedGroups = (
 				388947722D686045008BB0CD /* Who is the spyUITests */,
 			);
-			name = "Who is the spyUITests";
+			name = "WHO'S THE SPYUITests";
 			packageProductDependencies = (
 			);
 			productName = "Who is the spyUITests";
-			productReference = 3889476F2D686045008BB0CD /* Who is the spyUITests.xctest */;
+			productReference = 3889476F2D686045008BB0CD /* WHO'S THE SPYUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -186,7 +192,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 388947502D686044008BB0CD /* Build configuration list for PBXProject "Who is the spy" */;
+			buildConfigurationList = 388947502D686044008BB0CD /* Build configuration list for PBXProject "WHO'S THE SPY" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -201,9 +207,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				388947542D686044008BB0CD /* Who is the spy */,
-				388947642D686045008BB0CD /* Who is the spyTests */,
-				3889476E2D686045008BB0CD /* Who is the spyUITests */,
+				388947542D686044008BB0CD /* WHO'S THE SPY */,
+				388947642D686045008BB0CD /* WHO'S THE SPYTests */,
+				3889476E2D686045008BB0CD /* WHO'S THE SPYUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -213,6 +219,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38AF550E2D76EA0700FDD8F6 /* Geist.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,12 +266,12 @@
 /* Begin PBXTargetDependency section */
 		388947672D686045008BB0CD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 388947542D686044008BB0CD /* Who is the spy */;
+			target = 388947542D686044008BB0CD /* WHO'S THE SPY */;
 			targetProxy = 388947662D686045008BB0CD /* PBXContainerItemProxy */;
 		};
 		388947712D686045008BB0CD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 388947542D686044008BB0CD /* Who is the spy */;
+			target = 388947542D686044008BB0CD /* WHO'S THE SPY */;
 			targetProxy = 388947702D686045008BB0CD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -471,7 +478,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Who is the spy.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Who is the spy";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WHO'S THE SPY.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WHO'S THE SPY";
 			};
 			name = Debug;
 		};
@@ -489,7 +496,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Who is the spy.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Who is the spy";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WHO'S THE SPY.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WHO'S THE SPY";
 			};
 			name = Release;
 		};
@@ -528,7 +535,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		388947502D686044008BB0CD /* Build configuration list for PBXProject "Who is the spy" */ = {
+		388947502D686044008BB0CD /* Build configuration list for PBXProject "WHO'S THE SPY" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				388947772D686045008BB0CD /* Debug */,
@@ -537,7 +544,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		388947792D686045008BB0CD /* Build configuration list for PBXNativeTarget "Who is the spy" */ = {
+		388947792D686045008BB0CD /* Build configuration list for PBXNativeTarget "WHO'S THE SPY" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3889477A2D686045008BB0CD /* Debug */,
@@ -546,7 +553,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3889477C2D686045008BB0CD /* Build configuration list for PBXNativeTarget "Who is the spyTests" */ = {
+		3889477C2D686045008BB0CD /* Build configuration list for PBXNativeTarget "WHO'S THE SPYTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3889477D2D686045008BB0CD /* Debug */,
@@ -555,7 +562,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3889477F2D686045008BB0CD /* Build configuration list for PBXNativeTarget "Who is the spyUITests" */ = {
+		3889477F2D686045008BB0CD /* Build configuration list for PBXNativeTarget "WHO'S THE SPYUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				388947802D686045008BB0CD /* Debug */,

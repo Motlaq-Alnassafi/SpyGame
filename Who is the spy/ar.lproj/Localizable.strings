@@ -14,10 +14,10 @@
 "TimedRounds" = "جولات محددة بالوقت";
 "uniqueLocations" = "أكثر من 100 موقع فريد لاكتشافها";
 "GameDescribtion" = "لعبة استنتاج اجتماعي";
-"TimedRoundsDescribtion" = "لعب لمدة 8 دقائق مع عد تنازلي.";
+"TimedRoundsDescribtion" = "لعب لمدة 8 دقائق مع عد تنازلي";
 "Players" = "اللاعبون";
 "Spies" = "الجواسيس";
-"HowToPlay" = "شلون تلعبون: منو الجاسوس؟";
+"HowToPlay" = "شلون تلعبون منو الجاسوس؟";
 "StartGame" = "ابدأ اللعبة";
 "RoleReveal" = "حان وقت كشف الأدوار";
 "RoleRevealCTA" = "ابدأ كشف الأدوار";
@@ -43,15 +43,15 @@
 "VoteOnSpy" = "التصويت على الجاسوس";
 "SuggestedQuestions" = "الأسئلة المقترحة";
 "SuggestedQuestion1" = "ماذا يمكنك أن ترى من حولك؟";
-"SuggestedTip1" = "سؤال افتتاحي جيد";
 "SuggestedQuestion2" = "ما الأصوات التي تسمعها عادةً؟";
-"SuggestedTip2" = "جو المكان";
 "SuggestedQuestion3" = "ما الأنشطة التي تحدث هنا؟";
-"SuggestedTip3" = "غرض المكان";
 "SuggestedQuestion4" = "من الذي تراه عادةً هنا؟";
-"SuggestedTip4" = "الزوار المعتادون";
 "SuggestedQuestion5" = "متى يكون هذا المكان أكثر ازدحامًا؟";
-"SuggestedTip5" = "الأنماط اليومية";
+"SuggestedQuestionAnimal1" = "ماذا يفعل هذا الحيوان عادة؟";
+"SuggestedQuestionAnimal2" = "هل يمكنك وصف هذا الحيوان؟";
+"SuggestedQuestionAnimal3" = "ما الأصوات التي يصدرها هذا الحيوان؟";
+"SuggestedQuestionAnimal4" = "أين يعيش هذا الحيوان عادة؟";
+"SuggestedQuestionAnimal5" = "متى يكون هذا الحيوان أكثر نشاطًا؟";
 "SpiesWin" = "فازوا الجواسيس!";
 "RegularPlayersWin" = "فازوا اللاعبون العاديون!";
 "PlayerRoles" = "أدوار اللاعبين";
@@ -80,6 +80,9 @@
 "Yes" = "نعم";
 "Areyousure" = "هل أنت متأكد";
 "isASpy" = "هو الجاسوس؟";
+"Continue" = "تابع";
+"Enter your name" = "أدخل اسمك";
+"Who Are You?" = "من أنت؟";
 
 
 // games

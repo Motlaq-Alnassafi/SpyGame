@@ -10,29 +10,31 @@ import SwiftUI
 struct LogoCardView: View {
     var title: String
     var description: String?
-    var logoFrame: CGFloat
+//    var logoFrame: CGFloat
+    var logoHeight: CGFloat
+    var logoWidth: CGFloat
     var logoPadding: CGFloat
     var frameHeight: CGFloat
     var frameWidth: CGFloat
     var body: some View {
-        VStack(spacing: 16) {
+        VStack(spacing: 10) {
             Image("spyIcon")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: logoFrame, height: logoFrame)
-                .clipShape(Circle())
+                .frame(width: logoWidth, height: logoHeight)
                 .shadow(radius: 10)
                 .padding(.bottom, logoPadding)
 
             Text(title)
-                .font(.system(size: 18))
-                .fontWeight(.semibold)
+                .font(.custom("Geist", size: 24))
+                .fontWeight(.bold)
                 .foregroundColor(CustomColors.textColor)
 
             if let description = description {
                 Text(description)
-                    .font(.system(size: 12))
-                    .foregroundColor(CustomColors.descriptionColor)
+                    .font(.custom("Geist", size: 12))
+                    .fontWeight(.bold)
+                    .foregroundColor(CustomColors.textColor)
             }
         }
         .padding()

@@ -26,12 +26,14 @@ struct FeatureRow: View {
 
             VStack(alignment: .leading, spacing: 10) {
                 Text(title)
-                    .font(.system(size: 14))
+                    .font(.custom("Geist", size: 18))
+                    .fontWeight(.bold)
                     .foregroundColor(CustomColors.textColor)
 
                 Text(description)
-                    .font(.system(size: 12))
-                    .foregroundColor(CustomColors.descriptionColor)
+                    .font(.custom("Geist", size: 14))
+                    .fontWeight(.regular)
+                    .foregroundColor(CustomColors.textColor)
             }
             Spacer()
         }

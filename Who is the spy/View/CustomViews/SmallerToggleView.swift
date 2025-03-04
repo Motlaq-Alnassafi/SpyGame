@@ -15,7 +15,8 @@ struct SmallerToggleView: View {
         HStack {
             Text(text)
                 .foregroundColor(.white)
-                .font(.system(size: 14))
+                .font(.custom("Geist", size: 16))
+                .fontWeight(.regular)
 
             Spacer()
 
@@ -27,12 +28,12 @@ struct SmallerToggleView: View {
                 ZStack {
                     RoundedRectangle(cornerRadius: 14)
                         .fill(isToggled ? Color(hex: "#FF6600") : Color.gray.opacity(0.3))
-                        .frame(width: 30, height: 20)
+                        .frame(width: 40, height: 25)
 
                     Circle()
                         .fill(Color.black)
-                        .frame(width: 20, height: 20)
-                        .offset(x: isToggled ? 10 : -10)
+                        .frame(width: 23, height: 25)
+                        .offset(x: isToggled ? 8 : -8)
                         .animation(.easeInOut(duration: 0.2), value: isToggled)
                 }
             }

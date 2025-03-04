@@ -9,14 +9,14 @@ import SwiftUI
 
 struct SuggestedQuestionsView: View {
     @State private var currentIndex = 0
+    @ObservedObject var viewModel: GameViewModel
 
-    let questions = [
-        ("SuggestedQuestion1".localized, "eye"),
-        ("SuggestedQuestion2".localized, "ear"),
-        ("SuggestedQuestion3".localized, "activities"),
-        ("SuggestedQuestion4".localized, "groupOfPeople"),
-        ("SuggestedQuestion5".localized, "BusiestTime"),
-    ]
+    var questions: [(String, String)]
+
+    init(viewModel: GameViewModel) {
+        self.viewModel = viewModel
+        questions = viewModel.getSuggestedQuestions()
+    }
 
     var body: some View {
         ZStack {

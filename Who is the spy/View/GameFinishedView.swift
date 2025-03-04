@@ -19,11 +19,13 @@ struct GameFinishedView: View {
                     .frame(width: 138, height: 100)
 
                 Text(viewModel.winnerRole)
-                    .font(.system(size: 32, weight: .bold, design: .rounded))
+                    .font(.custom("Geist", size: 32))
+                    .fontWeight(.bold)
                     .foregroundColor(.white)
 
                 Text(viewModel.getEndGameItemDescription())
-                    .font(.system(size: 16))
+                    .font(.custom("Geist", size: 16))
+                    .fontWeight(.medium)
                     .foregroundColor(.white)
 
                 HStack(spacing: 8) {
@@ -32,7 +34,7 @@ struct GameFinishedView: View {
                         .frame(width: 24, height: 24)
 
                     Text(viewModel.getCategoryName())
-                        .font(.title2)
+                        .font(.custom("Geist", size: 20))
                         .fontWeight(.semibold)
                         .foregroundColor(.white)
                 }

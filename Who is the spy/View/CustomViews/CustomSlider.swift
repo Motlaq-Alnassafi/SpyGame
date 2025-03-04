@@ -17,6 +17,8 @@ struct CustomSlider: UIViewRepresentable {
         slider.maximumValue = Float(maximumValue)
         slider.value = Float(value)
 
+        slider.isContinuous = true
+
         let thumbSize = CGSize(width: 30, height: 30)
         let thumbImage = createThumbImage(color: UIColor(hex: "#FF6600"), size: thumbSize, borderColor: .white, borderWidth: 3)
         slider.setThumbImage(thumbImage, for: .normal)
@@ -30,7 +32,9 @@ struct CustomSlider: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: UISlider, context _: Context) {
-        uiView.value = Float(value)
+        if Int(round(uiView.value)) != value {
+            uiView.value = Float(value)
+        }
     }
 
     func makeCoordinator() -> Coordinator {
@@ -45,7 +49,13 @@ struct CustomSlider: UIViewRepresentable {
         }
 
         @objc func valueChanged(_ sender: UISlider) {
-            parent.value = Int(sender.value)
+            let newValue = Int(round(sender.value))
+
+            if newValue != parent.value {
+                DispatchQueue.main.async {
+                    self.parent.value = newValue
+                }
+            }
         }
     }
 

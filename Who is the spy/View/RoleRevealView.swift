@@ -18,7 +18,10 @@ struct RoleRevealView: View {
     var body: some View {
         VStack(spacing: 24) {
             CustomNavigationBarView(leftIcon: "house",
-                                    leftAction: { showAlert = true }).alert("AreYouSure".localized, isPresented: $showAlert) {
+                                    leftAction: {
+                                        showAlert = true
+                                        viewModel.customPlayerNames = false
+                                    }).alert("AreYouSure".localized, isPresented: $showAlert) {
                 Button("Cancel", role: .cancel) {}
                 Button("Yes".localized, role: .destructive) {
                     viewModel.showingIntro = true
@@ -35,11 +38,13 @@ struct RoleRevealView: View {
                         .padding(.top, 40)
 
                     Text("RoleReveal".localized)
-                        .font(.system(size: 28, weight: .bold, design: .rounded))
+                        .font(.custom("Geist", size: 28))
+                        .fontWeight(.bold)
                         .foregroundColor(.white)
 
                     Text("RoleRevealDiscription".localized)
-                        .font(.system(size: 16))
+                        .font(.custom("Geist", size: 16))
+                        .fontWeight(.regular)
                         .multilineTextAlignment(.center)
                         .foregroundColor(.white.opacity(0.8))
                         .padding(.horizontal, 32)
@@ -66,11 +71,12 @@ struct RoleRevealView: View {
                             .font(.system(size: 64))
                             .padding(.top, 40)
 
-                        Text("Who Are You?")
-                            .font(.system(size: 28, weight: .bold, design: .rounded))
+                        Text("Who Are You?".localized)
+                            .font(.custom("Geist", size: 28))
+                            .fontWeight(.bold)
                             .foregroundColor(.white)
 
-                        TextField("Enter your name", text: $viewModel.editablePlayerName)
+                        TextField("Enter your name".localized, text: $viewModel.editablePlayerName)
                             .font(.title3)
                             .padding()
                             .background(Color.white.opacity(0.1))
@@ -81,7 +87,7 @@ struct RoleRevealView: View {
 
                         Spacer()
 
-                        PrimaryButton(text: "Continue", color: .indigo) {
+                        PrimaryButton(text: "Continue".localized, color: .indigo) {
                             viewModel.updatePlayerName(newName: viewModel.editablePlayerName)
                             showRole = true
                         }
@@ -90,13 +96,15 @@ struct RoleRevealView: View {
                         .disabled(viewModel.editablePlayerName.isEmpty)
                     }
                 } else {
-                    VStack(spacing: 24) {
+                    VStack(spacing: 20) {
                         Text("PassTheDevice".localized)
-                            .font(.system(size: 18, weight: .medium))
+                            .font(.custom("Geist", size: 28))
+                            .fontWeight(.regular)
                             .foregroundColor(.white.opacity(0.8))
 
                         Text(player.name)
-                            .font(.system(size: 32, weight: .bold, design: .rounded))
+                            .font(.custom("Geist", size: 36))
+                            .fontWeight(.bold)
                             .foregroundColor(.white)
 
                         Spacer()
@@ -107,7 +115,7 @@ struct RoleRevealView: View {
 
                         if showRole {
                             PrimaryButton(text: "NextPlayer".localized) {
-                                withAnimation {
+                                withAnimation(.easeInOut(duration: viewModel.customPlayerNames == true ? 0 : 0.3)) {
                                     tapped = false
                                     showRole = false
                                     cardRotation = 0
@@ -152,13 +160,15 @@ struct RoleRevealView: View {
                                 .frame(width: viewModel.players[viewModel.currentPlayerIndex].isSpy ? 70 : 80, height: 80)
 
                             Text(viewModel.getPlayerRoleDescription(player))
-                                .font(.headline)
+                                .font(.custom("Geist", size: 20))
+                                .fontWeight(.medium)
                                 .multilineTextAlignment(.center)
                                 .foregroundColor(.white)
                                 .padding(.horizontal)
                         } else {
                             Text("TapToRevealYourRole".localized)
-                                .font(.headline)
+                                .font(.custom("Geist", size: 20))
+                                .fontWeight(.medium)
                                 .foregroundColor(.white)
                                 .padding(.top, 25)
 
@@ -176,7 +186,7 @@ struct RoleRevealView: View {
         .padding(.horizontal, 75)
         .onTapGesture {
             if !tapped {
-                withAnimation(.easeInOut(duration: 0.4)) {
+                withAnimation(.easeInOut(duration: 0.3)) {
                     cardRotation += showRole == false ? 180 : 0
                     showRole = true
                     viewModel.viewCurrentPlayerRole()

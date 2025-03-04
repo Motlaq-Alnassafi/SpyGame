@@ -23,9 +23,10 @@ struct GameSetupView: View {
                 .padding(.top, 20)
 
             LogoCardView(title: "GameSetup".localized,
-                         logoFrame: 80,
-                         logoPadding: 10,
-                         frameHeight: 170,
+                         logoHeight: 138,
+                         logoWidth: 184,
+                         logoPadding: 0,
+                         frameHeight: 190,
                          frameWidth: 200)
                 .padding(.top, 32)
 
@@ -36,13 +37,15 @@ struct GameSetupView: View {
                             .resizable()
                             .frame(width: 32, height: 32)
                         Text("\("Players".localized)")
-                            .font(.system(size: 16, weight: .bold))
+                            .font(.custom("Geist", size: 16))
+                            .fontWeight(.bold)
                             .foregroundColor(.white)
 
                         Spacer()
 
                         Text("\(playerCount)")
-                            .font(.system(size: 16, weight: .bold))
+                            .font(.custom("Geist", size: 16))
+                            .fontWeight(.bold)
                             .foregroundColor(.white)
                     }
 
@@ -55,13 +58,15 @@ struct GameSetupView: View {
                             .resizable()
                             .frame(width: 32, height: 32)
                         Text("\("Spies".localized)")
-                            .font(.system(size: 16, weight: .bold))
+                            .font(.custom("Geist", size: 16))
+                            .fontWeight(.bold)
                             .foregroundColor(.white)
 
                         Spacer()
 
                         Text("\(spyCount)")
-                            .font(.system(size: 16, weight: .bold))
+                            .font(.custom("Geist", size: 16))
+                            .fontWeight(.bold)
                             .foregroundColor(.white)
                     }
 

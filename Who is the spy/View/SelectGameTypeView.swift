@@ -23,7 +23,8 @@ struct SelectGameTypeView: View {
                 .padding(.top, 20)
 
             Text("ChooseGameType".localized)
-                .font(.system(size: 48, weight: .regular, design: .default))
+                .font(.custom("Geist", size: 48))
+                .fontWeight(.bold)
                 .padding(.top, 32)
                 .padding(.horizontal)
                 .padding(.bottom)
@@ -87,7 +88,7 @@ struct SelectGameTypeView: View {
                     .overlay(
                         VStack {
                             Text(text)
-                                .font(.system(size: 24, weight: .regular, design: .default))
+                                .font(.custom("Geist", size: 24))
                                 .foregroundColor(.white)
                                 .padding(.top, 25)
 

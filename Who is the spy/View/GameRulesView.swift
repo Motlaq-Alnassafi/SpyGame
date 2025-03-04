@@ -16,7 +16,7 @@ struct GameRulesView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 20) {
                     Text("HowToPlay".localized)
-                        .font(.title)
+                        .font(.custom("Geist", size: 30))
                         .fontWeight(.bold)
                         .padding(.top)
 
@@ -63,11 +63,13 @@ struct RuleSection: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text(title)
-                .font(.headline)
+                .font(.custom("Geist", size: 20))
+                .fontWeight(.bold)
                 .foregroundColor(.primary)
 
             Text(content)
-                .font(.body)
+                .font(.custom("Geist", size: 16))
+                .fontWeight(.regular)
                 .foregroundColor(.secondary)
                 .lineSpacing(4)
         }

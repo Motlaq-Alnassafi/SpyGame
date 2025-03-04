@@ -20,7 +20,7 @@ struct IntroView: View {
                 .padding(.top, 20)
                 .padding(.bottom, 20)
 
-            LogoCardView(title: "whoIsTheSpy".localized, description: "GameDescribtion".localized, logoFrame: 140, logoPadding: 10, frameHeight: 260, frameWidth: 248)
+            LogoCardView(title: "whoIsTheSpy".localized, description: "GameDescribtion".localized, logoHeight: 138, logoWidth: 184, logoPadding: 0, frameHeight: 260, frameWidth: 248)
                 .padding(.bottom, 36)
 
             VStack(spacing: 20) {
