@@ -73,7 +73,7 @@
 "remaining" = "Time Remaining";
 "questionmark" = "questionmark";
 "Setup" = "Setup";
-"RuleSection1" = "1. Each player gets a secret card with a location or animal.\n2. Most players get the same location or animal, but the spy gets a different card without a location or animal.\n3. The spy doesn't know who the other players are, and the other players don't know who the spy is.";
+"RuleSection1" = "1. Each player gets a secret card with a location.\n2. Most players get the same location, but the spy gets a different card without a location.\n3. The spy doesn't know who the other players are, and the other players don't know who the spy is. \n4. In the case where the players activated spy team the spies are going to know one another.";
 "Gameplay" = "Game play";
 "RuleSection2" = "1. Players take turns asking one another questions about the location.\n2. The spy must pretend to know the location without being too obvious.\n3. Non-spy players must prove they know the location without revealing too much.";
 "Winning" = "Winning";
