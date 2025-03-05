@@ -20,11 +20,11 @@ struct RoleRevealView: View {
             CustomNavigationBarView(leftIcon: "house",
                                     leftAction: {
                                         showAlert = true
-                                        viewModel.customPlayerNames = false
                                     }).alert("AreYouSure".localized, isPresented: $showAlert) {
                 Button("Cancel", role: .cancel) {}
                 Button("Yes".localized, role: .destructive) {
                     viewModel.showingIntro = true
+                    viewModel.customPlayerNames = false
                     viewModel.gameState = .setup
                 }
             }
@@ -56,7 +56,7 @@ struct RoleRevealView: View {
 
                     Spacer()
 
-                    PrimaryButton(text: "RoleRevealCTA".localized, color: .indigo) {
+                    PrimaryButton(text: "RoleRevealCTA".localized) {
                         viewModel.nextPlayer()
                     }
                     .padding(.horizontal)
@@ -66,35 +66,7 @@ struct RoleRevealView: View {
                 let player = viewModel.players[viewModel.currentPlayerIndex]
 
                 if viewModel.customPlayerNames && !showRole {
-                    VStack(spacing: 32) {
-                        Text("👤")
-                            .font(.system(size: 64))
-                            .padding(.top, 40)
-
-                        Text("Who Are You?".localized)
-                            .font(.custom("Geist", size: 28))
-                            .fontWeight(.bold)
-                            .foregroundColor(.white)
-
-                        TextField("Enter your name".localized, text: $viewModel.editablePlayerName)
-                            .font(.title3)
-                            .padding()
-                            .background(Color.white.opacity(0.1))
-                            .cornerRadius(16)
-                            .foregroundColor(.white)
-                            .multilineTextAlignment(.center)
-                            .padding(.horizontal, 32)
-
-                        Spacer()
-
-                        PrimaryButton(text: "Continue".localized, color: .indigo) {
-                            viewModel.updatePlayerName(newName: viewModel.editablePlayerName)
-                            showRole = true
-                        }
-                        .padding(.horizontal)
-                        .padding(.bottom, 32)
-                        .disabled(viewModel.editablePlayerName.isEmpty)
-                    }
+                    customNameView(viewModel: viewModel)
                 } else {
                     VStack(spacing: 20) {
                         Text("PassTheDevice".localized)
@@ -128,6 +100,67 @@ struct RoleRevealView: View {
                     }
                 }
             }
+        }
+    }
+
+    @ViewBuilder
+    func customNameView(viewModel: GameViewModel) -> some View {
+        VStack(spacing: .zero) {
+            Image("CustomName")
+                .resizable()
+                .frame(width: 100, height: 100)
+                .padding(.top, 32)
+
+            Text("CustomPlayerNamesEntry".localized)
+                .font(.custom("Geist", size: 28))
+                .fontWeight(.bold)
+                .foregroundColor(.white)
+                .padding(.top, 24)
+            ScrollView {
+                ForEach(viewModel.players.indices, id: \.self) { Index in
+                    VStack(alignment: .leading, spacing: 4) {
+                        let playerName = "Player".localized + " \(Index + 1)"
+                        Text(playerName)
+                        TextField("Enter your name".localized, text: $viewModel.editablePlayerNames[Index])
+                            .padding(8)
+                            .font(.custom("Geist", size: 20))
+                            .multilineTextAlignment(.leading)
+                            .background(
+                                RoundedRectangle(cornerRadius: 8)
+                                    .fill(CustomColors.innerBackground)
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 8)
+                                            .stroke(Color.white.opacity(0.15), lineWidth: 1)
+                                    )
+                            )
+                            .foregroundColor(.white)
+                    }
+                    .padding(.horizontal)
+                }
+            }
+            .padding(.top, 24)
+
+            Spacer()
+
+            Button(action: {
+                viewModel.updatePlayerNames()
+                viewModel.currentPlayerIndex = -1
+                viewModel.customPlayerNames = false
+            }) {
+                Text("Continue".localized)
+                    .font(.custom("Geist", size: 20))
+                    .fontWeight(.bold)
+                    .foregroundColor(viewModel.editablePlayerNames.contains { $0.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty } ? CustomColors.textColor.opacity(0.15) : CustomColors.textColor)
+                    .frame(height: 56)
+                    .frame(maxWidth: .infinity)
+                    .background(viewModel.editablePlayerNames.contains { $0.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty } ? CustomColors.primaryButton.opacity(0.15) : CustomColors.primaryButton)
+                    .cornerRadius(16)
+                    .shadow(color: Color.orange.opacity(0.2), radius: 10, x: 0, y: 5)
+            }
+            .disabled(viewModel.editablePlayerNames.contains { $0.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty } ? true : false)
+            .frame(alignment: .bottom)
+            .padding(.horizontal)
+            .padding(.bottom, 32)
         }
     }
 

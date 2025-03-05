@@ -18,20 +18,21 @@ class GameViewModel: ObservableObject {
     @Published var timer: AnyCancellable?
     @Published var remainingSeconds: Int = 8 * 60
     @Published var winnerRole: String = ""
-    @Published var showVotingSheet = false
+//    @Published var showVotingSheet = false
     @Published var showingIntro = true
     @Published var hapticFeedback = true
     @Published var soundEffects = true
     @Published var customPlayerNames = false
-    @Published var editablePlayerName = ""
+    @Published var editablePlayerNames: [String] = []
     @Published var playerCount = 0
     @Published var spyCount = 0
     @Published var category: [CategoryItem] = CategoryItem.generalLocations
+    @Published var showSpiesToEachOther: Bool = false
 
     private var currentCategoryItem: CategoryItem?
     private var usedEmojis = Set<String>()
     private var currentIndex = 0
-    var audioManager = AudioManager()
+    var spyIndices = Set<Int>()
 
     enum GameState {
         case gameType
@@ -66,7 +67,7 @@ class GameViewModel: ObservableObject {
         guard spyCount < (playerCount + 1) / 2 else { return }
         currentCategoryItem = getCategoryItem()
         usedEmojis.removeAll()
-
+        editablePlayerNames.removeAll()
         var newPlayers: [Player] = []
         for i in 0 ..< playerCount {
             let emoji = getUniqueEmoji()
@@ -77,7 +78,14 @@ class GameViewModel: ObservableObject {
             ))
         }
 
-        var spyIndices = Set<Int>()
+//        for player in newPlayers {
+//            editablePlayerNames.append(player.name)
+//        }
+        for _ in newPlayers {
+            editablePlayerNames.append("")
+        }
+
+        spyIndices = Set<Int>()
         while spyIndices.count < spyCount {
             spyIndices.insert(Int.random(in: 0 ..< playerCount))
         }
@@ -88,7 +96,7 @@ class GameViewModel: ObservableObject {
 
         players = newPlayers
         gameState = .roleReveal
-        currentPlayerIndex = -1
+        currentPlayerIndex = customPlayerNames ? 0 : -1
     }
 
     private func getUniqueEmoji() -> String {
@@ -102,9 +110,10 @@ class GameViewModel: ObservableObject {
         return selectedEmoji
     }
 
-    func updatePlayerName(newName: String) {
-        guard currentPlayerIndex >= 0 && currentPlayerIndex < players.count else { return }
-        players[currentPlayerIndex].name = newName
+    func updatePlayerNames() {
+        for (index, _) in players.enumerated() {
+            players[index].name = editablePlayerNames[index]
+        }
     }
 
     func nextPlayer() {
@@ -117,8 +126,6 @@ class GameViewModel: ObservableObject {
         currentPlayerIndex += 1
         if currentPlayerIndex >= players.count {
             startGame()
-        } else if customPlayerNames {
-            editablePlayerName = "\("Player".localized) \(currentPlayerIndex + 1)"
         }
     }
 
@@ -128,9 +135,6 @@ class GameViewModel: ObservableObject {
     }
 
     func startGame() {
-        if soundEffects {
-            audioManager.playSound("gameSound")
-        }
         gameState = .playing
         startTimer()
     }
@@ -151,6 +155,9 @@ class GameViewModel: ObservableObject {
             .sink { [weak self] _ in
                 guard let self = self else { return }
                 if self.remainingSeconds > 0 {
+                    if soundEffects && self.remainingSeconds == 11 {
+                        AudioManager.shared.playSound("countDown")
+                    }
                     self.remainingSeconds -= 1
                 } else {
                     self.endGame(spyWins: true)
@@ -160,6 +167,7 @@ class GameViewModel: ObservableObject {
 
     func backToGameSetup() {
         players = []
+        editablePlayerNames = []
         gameState = .setup
         currentPlayerIndex = -1
         timer?.cancel()
@@ -168,6 +176,7 @@ class GameViewModel: ObservableObject {
         currentCategoryItem = nil
         showingIntro = false
         customPlayerNames = false
+        showSpiesToEachOther = false
     }
 
     func playAgain() {
@@ -176,7 +185,26 @@ class GameViewModel: ObservableObject {
         remainingSeconds = 8 * 60
         currentCategoryItem = nil
         showingIntro = false
-        setupGame(playerCount: playerCount, spyCount: spyCount)
+
+        currentCategoryItem = getCategoryItem()
+
+        for i in players.indices {
+            players[i].isSpy = false
+        }
+
+        var newPlayers = players
+        spyIndices = Set<Int>()
+        while spyIndices.count < spyCount {
+            spyIndices.insert(Int.random(in: 0 ..< playerCount))
+        }
+
+        for index in spyIndices {
+            newPlayers[index].isSpy = true
+        }
+
+        players = newPlayers
+        gameState = .roleReveal
+        currentPlayerIndex = -1
     }
 
     func getCategoryName() -> String {
@@ -189,7 +217,38 @@ class GameViewModel: ObservableObject {
 
     func getPlayerRoleDescription(_ player: Player) -> String {
         if player.isSpy {
-            return "\("YouAreTheSpy".localized)\n\n\("FigureOutLocation".localized)"
+            if spyCount > 1 && showSpiesToEachOther {
+                var spyNames: [String] = []
+                for index in spyIndices {
+                    spyNames.append(players[index].name)
+                }
+                spyNames.removeAll { $0.contains(player.name) }
+                var spiesText = "\("otherSpies".localized)"
+                for (index, spyName) in spyNames.enumerated() {
+                    if index > 0 {
+                        spiesText += "  \("and".localized) \(spyName)"
+                    } else {
+                        spiesText += " \(spyName)"
+                    }
+                }
+                switch gameType {
+                case .location:
+                    return "\("YouAreTheSpy".localized)\n\n\(spiesText)\n\n\(String(format: "FigureOutLocation".localized, "Location".localized))"
+                case .animal:
+                    return "\("YouAreTheSpy".localized)\n\n\(spiesText)\n\n\(String(format: "FigureOutLocation".localized, "Animal".localized))"
+                case .kuwaitAreas:
+                    return "\("YouAreTheSpy".localized)\n\n\(spiesText)\n\n\(String(format: "FigureOutLocation".localized, "Area".localized))"
+                }
+            } else {
+                switch gameType {
+                case .location:
+                    return "\("YouAreTheSpy".localized)\n\n\(String(format: "FigureOutLocation".localized, "Location".localized))"
+                case .animal:
+                    return "\("YouAreTheSpy".localized)\n\n\(String(format: "FigureOutLocation".localized, "Animal".localized))"
+                case .kuwaitAreas:
+                    return "\("YouAreTheSpy".localized)\n\n\(String(format: "FigureOutLocation".localized, "Area".localized))"
+                }
+            }
         } else {
             switch gameType {
             case .location:
@@ -233,19 +292,19 @@ class GameViewModel: ObservableObject {
             ]
         case .animal:
             return [
-                ("SuggestedQuestionAnimal1".localized, "eye"),
+                ("SuggestedQuestionAnimal1".localized, "WhatAnimalDo"),
                 ("SuggestedQuestionAnimal2".localized, "eye"),
                 ("SuggestedQuestionAnimal3".localized, "ear"),
-                ("SuggestedQuestionAnimal4".localized, "groupOfPeople"),
-                ("SuggestedQuestionAnimal5".localized, "activities"),
+                ("SuggestedQuestionAnimal4".localized, "AnimalLive"),
+                ("SuggestedQuestionAnimal5".localized, "AnimalActivities"),
             ]
         case .kuwaitAreas:
             return [
-                ("SuggestedQuestion1".localized, "eye"),
-                ("SuggestedQuestion2".localized, "ear"),
-                ("SuggestedQuestion3".localized, "activities"),
-                ("SuggestedQuestion4".localized, "groupOfPeople"),
-                ("SuggestedQuestion5".localized, "BusiestTime"),
+                ("SuggestedQuestionArea1".localized, "KuwaitGovernorate"),
+                ("SuggestedQuestionArea2".localized, "RingRoad"),
+                ("SuggestedQuestionArea3".localized, "CloseAreas"),
+                ("SuggestedQuestionArea4".localized, "AreaSize"),
+                ("SuggestedQuestionArea5".localized, "AreaDistance"),
             ]
         }
     }
