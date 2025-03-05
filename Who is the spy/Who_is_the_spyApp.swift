@@ -11,7 +11,7 @@ import SwiftUI
 struct Who_is_the_spyApp: App {
     var body: some Scene {
         WindowGroup {
-            SpyGameView()
+            SplashScreenView()
         }
     }
 }

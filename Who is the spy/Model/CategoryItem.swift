@@ -71,6 +71,7 @@ struct CategoryItem: Identifiable, Hashable {
         CategoryItem(name: "Submarine".localized, emoji: "Submarine"),
         CategoryItem(name: "GraveYard".localized, emoji: "GraveYard"),
         CategoryItem(name: "BeautySalon".localized, emoji: "BeautySalon"),
+        CategoryItem(name: "HotAirBaloon".localized, emoji: "HotAirBaloon"),
     ].shuffled()
 
     static var KuwaitLocations = [

@@ -53,6 +53,11 @@
 "SuggestedQuestionAnimal3" = "What sounds does this animal make?";
 "SuggestedQuestionAnimal4" = "Where does this animal usually live?";
 "SuggestedQuestionAnimal5" = "When is this animal most active?";
+"SuggestedQuestionArea1" = "What does this animal usually do?";
+"SuggestedQuestionArea2" = "Can you describe this animal?";
+"SuggestedQuestionArea3" = "What sounds does this animal make?";
+"SuggestedQuestionArea4" = "Where does this animal usually live?";
+"SuggestedQuestionArea5" = "When is this animal most active?";
 "SpiesWin" = "Spies Win!";
 "RegularPlayersWin" = "Regular Players Win!";
 "PlayerRoles" = "Player Roles";
@@ -67,8 +72,8 @@
 "remaining" = "Time Remaining";
 "questionmark" = "questionmark";
 "Setup" = "Setup";
-"RuleSection1" = "1. Each player gets a secret card with a location.\n2. Most players get the same location, but the spy gets a different one.\n3. The spy doesn't know who the other players are, and the other players don't know who the spy is.";
-"Gameplay" = "Gameplay";
+"RuleSection1" = "1. Each player gets a secret card with a location or animal.\n2. Most players get the same location or animal, but the spy gets a different card without a location or animal.\n3. The spy doesn't know who the other players are, and the other players don't know who the spy is.";
+"Gameplay" = "Game play";
 "RuleSection2" = "1. Players take turns asking one another questions about the location.\n2. The spy must pretend to know the location without being too obvious.\n3. Non-spy players must prove they know the location without revealing too much.";
 "Winning" = "Winning";
 "RuleSection3" = "• The spy wins if they guess the correct location or if time runs out without being identified.\n• The non-spy players win if they correctly identify the spy.";
@@ -184,6 +189,7 @@
 "Submarine" = "Submarine";
 "GraveYard" = "Grave Yard";
 "BeautySalon" = "Beauty Salon";
+"HotAirBaloon" = "Hot Air Baloon";
 
 //Animals
 "Camel" = "Camel";

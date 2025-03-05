@@ -52,6 +52,11 @@
 "SuggestedQuestionAnimal3" = "ما الأصوات التي يصدرها هذا الحيوان؟";
 "SuggestedQuestionAnimal4" = "أين يعيش هذا الحيوان عادة؟";
 "SuggestedQuestionAnimal5" = "متى يكون هذا الحيوان أكثر نشاطًا؟";
+"SuggestedQuestionArea1" = "What does this animal usually do?";
+"SuggestedQuestionArea2" = "Can you describe this animal?";
+"SuggestedQuestionArea3" = "What sounds does this animal make?";
+"SuggestedQuestionArea4" = "Where does this animal usually live?";
+"SuggestedQuestionArea5" = "When is this animal most active?";
 "SpiesWin" = "فازوا الجواسيس!";
 "RegularPlayersWin" = "فازوا اللاعبون العاديون!";
 "PlayerRoles" = "أدوار اللاعبين";
@@ -66,7 +71,7 @@
 "remaining" = "الوقت المتبقي";
 "questionmark" = "questionmark.ar";
 "Setup" = "إعداد";
-"RuleSection1" = "1. يحصل كل لاعب على بطاقة سرية تحتوي على موقع.\n2. يحصل معظم اللاعبين على نفس الموقع، لكن الجاسوس يحصل على موقع مختلف.\n3. لا يعرف الجاسوس من هم اللاعبون الآخرون، ولا يعرف اللاعبون الآخرون من هو الجاسوس.";
+"RuleSection1" = "1. يحصل كل لاعب على بطاقة سرية تحتوي على موقع أو حيوان.\n2. يحصل معظم اللاعبين على نفس الموقع أو الحيوان، لكن الجاسوس يحصل على بطاقة مختلفة بدون موقع أو حيوان.\n3. لا يعرف الجاسوس من هم اللاعبون الآخرون، ولا يعرف اللاعبون الآخرون من هو الجاسوس.";
 "Gameplay" = "طريقة اللعب";
 "RuleSection2" = "1. يتناوب اللاعبون على طرح الأسئلة على بعضهم البعض حول الموقع.\n2. يجب على الجاسوس التظاهر بأنه يعرف الموقع دون أن يكون ذلك واضحًا جدًا.\n3. يجب على اللاعبين غير الجواسيس إثبات معرفتهم بالموقع دون الكشف عن الكثير من التفاصيل.";
 "Winning" = "الفوز";
@@ -183,6 +188,7 @@
 "Submarine" = "غواصة";
 "GraveYard" = "مقبرة";
 "BeautySalon" = "صالون تجميل نسائي";
+"HotAirBaloon" = "منطاد";
 
 
 //Animals
