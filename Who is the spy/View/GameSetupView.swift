@@ -83,9 +83,12 @@ struct GameSetupView: View {
                 .padding(.horizontal)
                 .padding(.bottom, 16)
 
-            SmallerToggleView(toggled: $viewModel.soundEffects, text: "SoundEffects".localized)
-                .padding(.horizontal)
-                .padding(.bottom, 16)
+            HStack(spacing: 4) {
+                SmallerToggleView(toggled: $viewModel.soundEffects, text: "SoundEffects".localized)
+                SmallerToggleView(isToggled: false, toggled: $viewModel.showSpiesToEachOther, text: "SpyTeam".localized)
+            }
+            .padding(.horizontal)
+            .padding(.bottom, 16)
 
             Spacer()
 
@@ -95,8 +98,8 @@ struct GameSetupView: View {
                 viewModel.setupGame(playerCount: playerCount, spyCount: spyCount)
             }) {
                 Text("StartGame".localized)
-                    .font(.system(size: 20))
-                    .fontWeight(.semibold)
+                    .font(.custom("Geist", size: 20))
+                    .fontWeight(.bold)
                     .foregroundColor(spyCount < (playerCount + 1) / 2 ? CustomColors.textColor : CustomColors.textColor.opacity(0.15))
                     .frame(height: 56)
                     .frame(maxWidth: .infinity)

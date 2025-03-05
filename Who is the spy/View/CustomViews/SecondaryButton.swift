@@ -9,7 +9,6 @@ import SwiftUICore
 
 struct SecondaryButton: View {
     var text: String
-    var color: Color = .blue
     var action: () -> Void
 
     var body: some View {
@@ -17,7 +16,7 @@ struct SecondaryButton: View {
             Text(text)
                 .font(.custom("Geist", size: 20))
                 .fontWeight(.bold)
-                .foregroundColor(color)
+                .foregroundColor(CustomColors.textColor)
                 .frame(height: 56)
                 .frame(maxWidth: .infinity)
                 .background(

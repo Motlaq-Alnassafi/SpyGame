@@ -31,7 +31,7 @@
 "Area" = "المنطقة";
 "PlayerRoleDescription" = "اطرح وأجب على الأسئلة دون أن تكون مكشوفًا جدً!";
 "YouAreTheSpy" = "أنت الجاسوس!";
-"FigureOutLocation" = "حاول اكتشاف الموقع دون أن يتم الإمساك بك.";
+"FigureOutLocation" = "حاول اكتشاف %@ دون أن يتم الإمساك بك.";
 "RegularPlayer" = "لاعب عادي";
 "Spy" = "جاسوس";
 "TheLocationWas" = "كان الموقع";
@@ -61,6 +61,7 @@
 "RegularPlayersWin" = "فازوا اللاعبون العاديون!";
 "PlayerRoles" = "أدوار اللاعبين";
 "CustomPlayerNames" = "إنشاء أسماء لاعبين مخصصة";
+"CustomPlayerNamesEntry" = "أسماء لاعبين مخصصة";
 "HapticFeedback" = "اهتزاز الجهاز";
 "SoundEffects" = "تأثيرات صوتية";
 "VoteOnSpy" = "صوت على الجاسوس";
@@ -88,6 +89,10 @@
 "Continue" = "تابع";
 "Enter your name" = "أدخل اسمك";
 "Who Are You?" = "من أنت؟";
+"otherSpies" = "معاك:";
+"SpyTeam" = "فريق الجواسيس";
+"and" = "و";
+"WhoWon" = "منو فاز؟";
 
 
 // games

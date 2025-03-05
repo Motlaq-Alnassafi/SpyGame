@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct SmallerToggleView: View {
-    @State private var isToggled: Bool = true
+    @State var isToggled: Bool = true
     @Binding var toggled: Bool
     var text: String
     var body: some View {
         HStack {
             Text(text)
                 .foregroundColor(.white)
-                .font(.custom("Geist", size: 16))
+                .font(.custom("Geist", size: 15))
                 .fontWeight(.regular)
 
             Spacer()

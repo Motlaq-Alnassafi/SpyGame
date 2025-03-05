@@ -10,7 +10,6 @@ import SwiftUICore
 
 struct PrimaryButton: View {
     var text: String
-    var color: Color = .init(hex: "#FF6600")
     var action: () -> Void
 
     var body: some View {

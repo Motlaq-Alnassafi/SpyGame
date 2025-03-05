@@ -38,7 +38,7 @@ struct IntroView: View {
 
             Spacer()
 
-            PrimaryButton(text: "StartPlaying".localized, color: .indigo) {
+            PrimaryButton(text: "StartPlaying".localized) {
                 viewModel.showingIntro = false
                 viewModel.gameState = .gameType
             }

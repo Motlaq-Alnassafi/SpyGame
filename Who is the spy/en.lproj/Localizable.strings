@@ -32,7 +32,7 @@
 "Animal" = "Animal";
 "PlayerRoleDescription" = "Ask and answer questions without being too obvious!";
 "YouAreTheSpy" = "You are the Spy!";
-"FigureOutLocation" = "Try to figure out the location without being caught.";
+"FigureOutLocation" = "Try to figure out the %@ without being caught.";
 "RegularPlayer" = "Regular Player";
 "Spy" = "Spy";
 "TheLocationWas" = "The location was";
@@ -62,6 +62,7 @@
 "RegularPlayersWin" = "Regular Players Win!";
 "PlayerRoles" = "Player Roles";
 "CustomPlayerNames" = "Custom Player Names";
+"CustomPlayerNamesEntry" = "Custom Player Names";
 "HapticFeedback" = "Haptic Feedback";
 "SoundEffects" = "Sound Effects";
 "VoteOnSpy" = "Vote on Spy";
@@ -89,6 +90,10 @@
 "Continue" = "Continue";
 "Enter your name" = "Enter your name";
 "Who Are You?" = "Who Are You?";
+"otherSpies" = "Other spies:";
+"SpyTeam" = "Spy Team";
+"and" = "and";
+"WhoWon" = "Who Won?";
 
 
 // games

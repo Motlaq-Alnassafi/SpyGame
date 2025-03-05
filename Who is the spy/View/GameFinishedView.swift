@@ -92,11 +92,11 @@ struct GameFinishedView: View {
             Spacer()
 
             VStack(spacing: 16) {
-                PrimaryButton(text: "PlayAgain".localized, color: .indigo) {
+                PrimaryButton(text: "PlayAgain".localized) {
                     viewModel.playAgain()
                 }
 
-                SecondaryButton(text: "ChangePlayers".localized, color: .white) {
+                SecondaryButton(text: "ChangePlayers".localized) {
                     viewModel.backToGameSetup()
                 }
             }

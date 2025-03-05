@@ -11,6 +11,7 @@ import SwiftUICore
 struct GamePlayView: View {
     @ObservedObject var viewModel: GameViewModel
     @State private var showLocationList = false
+    @State private var showAlert = false
 
     var formattedTime: String {
         let minutes = viewModel.remainingSeconds / 60
@@ -20,8 +21,10 @@ struct GamePlayView: View {
 
     var body: some View {
         VStack(spacing: 16) {
+            Spacer()
+
             VStack {
-                Spacer()
+//                Spacer()
 
                 ZStack {
                     Circle()
@@ -55,26 +58,33 @@ struct GamePlayView: View {
                 .frame(width: 176, height: 176)
             }
 
-            Spacer()
+//            Spacer()
 
             SuggestedQuestionsView(viewModel: viewModel)
 
             Spacer()
 
             VStack(spacing: 16) {
-                PrimaryButton(text: "VoteOnSpy".localized, color: .red) {
-                    viewModel.showVotingSheet = true
-                }
+//                PrimaryButton(text: "VoteOnSpy".localized) {
+//                    viewModel.showVotingSheet = true
+//                }
 
-                SecondaryButton(text: "EndGame".localized, color: .white) {
-                    viewModel.endGame(spyWins: false)
+                PrimaryButton(text: "EndGame".localized) {
+                    showAlert = true
+                }.alert("WhoWon".localized, isPresented: $showAlert) {
+                    Button("Players", role: .cancel) {
+                        viewModel.endGame(spyWins: false)
+                    }
+                    Button("Spies".localized, role: .destructive) {
+                        viewModel.endGame(spyWins: true)
+                    }
                 }
             }
             .padding(.horizontal)
-            .padding(.vertical)
+            .padding(.bottom, 32)
         }
-        .sheet(isPresented: $viewModel.showVotingSheet) {
-            VotingSheetView(viewModel: viewModel, isPresented: $viewModel.showVotingSheet)
-        }
+//        .sheet(isPresented: $viewModel.showVotingSheet) {
+//            VotingSheetView(viewModel: viewModel, isPresented: $viewModel.showVotingSheet)
+//        }
     }
 }
