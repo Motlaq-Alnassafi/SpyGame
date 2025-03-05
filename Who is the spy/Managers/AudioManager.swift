@@ -8,6 +8,7 @@
 import AVFoundation
 
 class AudioManager: ObservableObject {
+    static let shared = AudioManager()
     var audioPlayer: AVAudioPlayer?
 
     func playSound(_ fileName: String, fileType: String = "mp3") {

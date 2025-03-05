@@ -52,11 +52,11 @@
 "SuggestedQuestionAnimal3" = "ما الأصوات التي يصدرها هذا الحيوان؟";
 "SuggestedQuestionAnimal4" = "أين يعيش هذا الحيوان عادة؟";
 "SuggestedQuestionAnimal5" = "متى يكون هذا الحيوان أكثر نشاطًا؟";
-"SuggestedQuestionArea1" = "What does this animal usually do?";
-"SuggestedQuestionArea2" = "Can you describe this animal?";
-"SuggestedQuestionArea3" = "What sounds does this animal make?";
-"SuggestedQuestionArea4" = "Where does this animal usually live?";
-"SuggestedQuestionArea5" = "When is this animal most active?";
+"SuggestedQuestionArea1" = "في أي محافظة تقع هذه المنطقة؟";
+"SuggestedQuestionArea2" = "ما هو الطريق الدائري المجاور لهذه المنطقة؟";
+"SuggestedQuestionArea3" = "ما هي المناطق القريبة من هذه المنطقة؟";
+"SuggestedQuestionArea4" = "هل هذه المنطقة كبيرة؟";
+"SuggestedQuestionArea5" = "كم تبعد هذه المنطقة عنا الآن؟";
 "SpiesWin" = "فازوا الجواسيس!";
 "RegularPlayersWin" = "فازوا اللاعبون العاديون!";
 "PlayerRoles" = "أدوار اللاعبين";
@@ -267,7 +267,6 @@
 //Asimah (Capital) Governorate
 "Abdulla Al-Salem" = "عبدالله السالم";
 "Adailiya" = "العديلية";
-"Al-Sour Gardens" = "حدائق السور";
 "Bnaid Al-Qar" = "بنيد القار";
 "Daiya" = "الدعية";
 "Dasma" = "الدسمة";
@@ -275,7 +274,6 @@
 "Doha" = "الدوحة";
 "Doha Port" = "ميناء الدوحة";
 "Faiha" = "الفيحاء";
-"Failaka Island" = "جزيرة فيلكا";
 "Granada" = "غرناطة";
 "Jibla" = "جبلة";
 "Kaifan" = "كيفان";
@@ -296,9 +294,6 @@
 "Sulaibikhat" = "الصليبخات";
 "Qairawan" = "القيروان";
 "Surra" = "السرة";
-"Ouha Island" = "جزيرة وربة";
-"Mischan Island" = "جزيرة مسكان";
-"Umm an Namil Island" = "جزيرة أم النمل";
 "Yarmouk" = "اليرموك";
 "Jaber Al-Ahmed" = "جابر الأحمد";
 
@@ -308,8 +303,7 @@
 "Rumaithiya" = "الرميثية";
 "Salam" = "السلام";
 "Salwa" = "سلوى";
-"Al-Bida'a" = "البديع";
-"Anjafa" = "أنجفة";
+"Al-Bida'a" = "البدع";
 "Hawalli" = "حولي";
 "Hitteen" = "حطين";
 "Mishrif" = "مشرف";
@@ -318,7 +312,6 @@
 "Shaab" = "الشعب";
 "Shuhada" = "الشهداء";
 "Al-Siddiq" = "الصديق";
-"Ministries Area" = "منطقة الوزارات";
 "Zahra" = "الزهراء";
 
 //Mubarak Al-Kabeer Governorate:
@@ -329,12 +322,9 @@
 "Al-Qusour" = "القصر";
 "Al-Fnaitees" = "الفنيطيس";
 "Messila" = "المسيلة";
-"Al-Masayel" = "المسيلة";
+"Al-Masayel" = "المسايل";
 "Mubarak Al-Kabeer" = "مبارك الكبير";
 "Sabah Al-Salem" = "صباح السالم";
-"Subhan Industrial" = "صبحان الصناعية";
-"Wista" = "الوسطى";
-"West Abu Ftaira Herafiya" = "غرب أبو فطيرة الحرفية";
 
 //Ahmadi Governorate:
 "Abu Halifa" = "أبو حليفة";
@@ -342,7 +332,6 @@
 "Ahmadi" = "الأحمدي";
 "Ali Sabah Al-Salem" = "علي صباح السالم";
 "Egaila" = "العقيلة";
-"Bar Al-Ahmadi" = "بر الأحمدي";
 "Bnaider" = "بنيدر";
 "Dhaher" = "الظهر";
 "Fahaheel" = "الفحيحيل";
@@ -360,16 +349,12 @@
 "Sabah Al Ahmad" = "صباح الأحمد";
 "Sabah Al Ahmad Sea City" = "مدينة صباح الأحمد البحرية";
 "Sabahiya" = "الصباحية";
-"Shuaiba Industrial" = "الشعيبة الصناعية";
-"South Sabahiya" = "جنوب الصباحية";
 "Wafra" = "الوفرة";
 "Zoor" = "الزور";
 "Fintas" = "الفنطاس";
-"Al Shadadiya Industrial" = "الشدادية الصناعية";
 
 //Farwaniya Governorate:
 "Abdullah Al-Mubarak" = "عبدالله المبارك";
-"Airport District" = "منطقة المطار";
 "Andalus" = "الأندلس";
 "Ardiya" = "العارضية";
 "Ardiya Herafiya" = "العارضية الحرفية";
@@ -385,7 +370,6 @@
 "Al-Riggai" = "الرقعي";
 "Rehab" = "الرحاب";
 "Sabah Al-Nasser" = "صباح الناصر";
-"Sabah Al-Salem University" = "جامعة صباح السالم";
 "West Abdullah Al-Mubarak" = "غرب عبدالله المبارك";
 "South Abdullah Al-Mubarak" = "جنوب عبدالله المبارك";
 "Sulaibiya" = "الصليبية";
@@ -395,12 +379,9 @@
 "Abdali" = "العبدلي";
 "Al-Mutlaa" = "المطلاع";
 "Kazma" = "كاظمة";
-"Bahra" = "بحرة";
 "Kabd" = "كبد";
-"Al-Sheqaya" = "الشقايا";
 "Al-Nahda" = "النهضة";
 "Amghara Industrial" = "أمغرة الصناعية";
-"Bar Al-Jahra" = "بر الجهراء";
 "Jahra" = "الجهراء";
 "Jahra Industrial Herafiya" = "الجهراء الصناعية الحرفية";
 "Naeem" = "النعيم";
@@ -413,8 +394,5 @@
 "Subiya" = "الصبية";
 "Sulaibiya" = "الصليبية";
 "Sulaibiya Agricultural Area" = "الصليبية الزراعية";
-"Sulaibiya Residential" = "الصليبية السكنية";
 "Taima" = "تيماء";
 "Waha" = "الواحة";
-"Bubiyan Island" = "جزيرة بوبيان";
-"Warbah Island" = "جزيرة وربة";

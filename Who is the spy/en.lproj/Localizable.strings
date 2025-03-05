@@ -53,11 +53,11 @@
 "SuggestedQuestionAnimal3" = "What sounds does this animal make?";
 "SuggestedQuestionAnimal4" = "Where does this animal usually live?";
 "SuggestedQuestionAnimal5" = "When is this animal most active?";
-"SuggestedQuestionArea1" = "What does this animal usually do?";
-"SuggestedQuestionArea2" = "Can you describe this animal?";
-"SuggestedQuestionArea3" = "What sounds does this animal make?";
-"SuggestedQuestionArea4" = "Where does this animal usually live?";
-"SuggestedQuestionArea5" = "When is this animal most active?";
+"SuggestedQuestionArea1" = "In what Governorate is this area?";
+"SuggestedQuestionArea2" = "What ring road is next to the area?";
+"SuggestedQuestionArea3" = "What area's are close by?";
+"SuggestedQuestionArea4" = "Is this area big?";
+"SuggestedQuestionArea5" = "How far is this area from us now?";
 "SpiesWin" = "Spies Win!";
 "RegularPlayersWin" = "Regular Players Win!";
 "PlayerRoles" = "Player Roles";
@@ -267,7 +267,6 @@
 //Asimah (Capital) Governorate:
 "Abdulla Al-Salem" = "Abdulla Al-Salem";
 "Adailiya" = "Adailiya";
-"Al-Sour Gardens" = "Al-Sour Gardens";
 "Bnaid Al-Qar" = "Bnaid Al-Qar";
 "Daiya" = "Daiya";
 "Dasma" = "Dasma";
@@ -275,7 +274,6 @@
 "Doha" = "Doha";
 "Doha Port" = "Doha Port";
 "Faiha" = "Faiha";
-"Failaka Island" = "Failaka Island";
 "Granada" = "Granada";
 "Jibla" = "Jibla";
 "Kaifan" = "Kaifan";
@@ -296,9 +294,6 @@
 "Sulaibikhat" = "Sulaibikhat";
 "Qairawan" = "Qairawan";
 "Surra" = "Surra";
-"Ouha Island" = "Ouha Island";
-"Mischan Island" = "Mischan Island";
-"Umm an Namil Island" = "Umm an Namil Island";
 "Yarmouk" = "Yarmouk";
 "Jaber Al-Ahmed" = "Jaber Al-Ahmed";
 
@@ -309,7 +304,6 @@
 "Salam" = "Salam";
 "Salwa" = "Salwa";
 "Al-Bida'a" = "Al-Bida'a";
-"Anjafa" = "Anjafa";
 "Hawalli" = "Hawalli";
 "Hitteen" = "Hitteen";
 "Mishrif" = "Mishrif";
@@ -318,7 +312,6 @@
 "Shaab" = "Shaab";
 "Shuhada" = "Shuhada";
 "Al-Siddiq" = "Al-Siddiq";
-"Ministries Area" = "Ministries Area";
 "Zahra" = "Zahra";
 
 //Mubarak Al-Kabeer Governorate:
@@ -332,9 +325,6 @@
 "Al-Masayel" = "Al-Masayel";
 "Mubarak Al-Kabeer" = "Mubarak Al-Kabeer";
 "Sabah Al-Salem" = "Sabah Al-Salem";
-"Subhan Industrial" = "Subhan Industrial";
-"Wista" = "Wista";
-"West Abu Ftaira Herafiya" = "West Abu Ftaira Herafiya";
 
 //Ahmadi Governorate:
 "Abu Halifa" = "Abu Halifa";
@@ -342,7 +332,6 @@
 "Ahmadi" = "Ahmadi";
 "Ali Sabah Al-Salem" = "Ali Sabah Al-Salem";
 "Egaila" = "Egaila";
-"Bar Al-Ahmadi" = "Bar Al-Ahmadi";
 "Bnaider" = "Bnaider";
 "Dhaher" = "Dhaher";
 "Fahaheel" = "Fahaheel";
@@ -360,16 +349,12 @@
 "Sabah Al Ahmad" = "Sabah Al Ahmad";
 "Sabah Al Ahmad Sea City" = "Sabah Al Ahmad Sea City";
 "Sabahiya" = "Sabahiya";
-"Shuaiba Industrial" = "Shuaiba Industrial";
-"South Sabahiya" = "South Sabahiya";
 "Wafra" = "Wafra";
 "Zoor" = "Zoor";
 "Fintas" = "Fintas";
-"Al Shadadiya Industrial" = "Al Shadadiya Industrial";
 
 //Farwaniya Governorate:
 "Abdullah Al-Mubarak" = "Abdullah Al-Mubarak";
-"Airport District" = "Airport District";
 "Andalus" = "Andalus";
 "Ardiya" = "Ardiya";
 "Ardiya Herafiya" = "Ardiya Herafiya";
@@ -385,7 +370,6 @@
 "Al-Riggai" = "Al-Riggai";
 "Rehab" = "Rehab";
 "Sabah Al-Nasser" = "Sabah Al-Nasser";
-"Sabah Al-Salem University" = "Sabah Al-Salem University";
 "West Abdullah Al-Mubarak" = "West Abdullah Al-Mubarak";
 "South Abdullah Al-Mubarak" = "South Abdullah Al-Mubarak";
 "Sulaibiya" = "Sulaibiya";
@@ -395,12 +379,9 @@
 "Abdali" = "Abdali";
 "Al-Mutlaa" = "Al-Mutlaa";
 "Kazma" = "Kazma";
-"Bahra" = "Bahra";
 "Kabd" = "Kabd";
-"Al-Sheqaya" = "Al-Sheqaya";
 "Al-Nahda" = "Al-Nahda";
 "Amghara Industrial" = "Amghara Industrial";
-"Bar Al-Jahra" = "Bar Al-Jahra";
 "Jahra" = "Jahra";
 "Jahra Industrial Herafiya" = "Jahra Industrial Herafiya";
 "Naeem" = "Naeem";
@@ -413,8 +394,5 @@
 "Subiya" = "Subiya";
 "Sulaibiya" = "Sulaibiya";
 "Sulaibiya Agricultural Area" = "Sulaibiya Agricultural Area";
-"Sulaibiya Residential" = "Sulaibiya Residential";
 "Taima" = "Taima";
 "Waha" = "Waha";
-"Bubiyan Island" = "Bubiyan Island";
-"Warbah Island" = "Warbah Island";
