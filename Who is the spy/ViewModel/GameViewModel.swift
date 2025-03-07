@@ -145,8 +145,7 @@ class GameViewModel: ObservableObject {
         timerManager.stopTimer()
         currentCategoryItem = nil
         showingIntro = false
-        settingsManager.customPlayerNames = false
-        settingsManager.showSpiesToEachOther = false
+        settingsManager.resetSettings()
     }
 
     func playAgain() {

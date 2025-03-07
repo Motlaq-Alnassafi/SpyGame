@@ -24,4 +24,9 @@ class SettingsManager: ObservableObject {
         guard soundEffects else { return }
         AudioManager.shared.playSound(soundName)
     }
+    
+    func resetSettings() {
+            customPlayerNames = false
+            showSpiesToEachOther = false
+        }
 }
