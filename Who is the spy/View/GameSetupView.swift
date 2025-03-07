@@ -75,17 +75,17 @@ struct GameSetupView: View {
             }
             .padding(.horizontal)
 
-            CustomToggle(toggled: $viewModel.customPlayerNames, text: "CustomPlayerNames".localized)
+            CustomToggle(toggled: $viewModel.settingsManager.customPlayerNames, text: "CustomPlayerNames".localized)
                 .frame(maxWidth: .infinity, maxHeight: 100)
                 .padding(.horizontal)
 
-            SmallerToggleView(toggled: $viewModel.hapticFeedback, text: "HapticFeedback".localized)
+            SmallerToggleView(toggled: $viewModel.settingsManager.hapticFeedback, text: "HapticFeedback".localized)
                 .padding(.horizontal)
                 .padding(.bottom, 16)
 
             HStack(spacing: 4) {
-                SmallerToggleView(toggled: $viewModel.soundEffects, text: "SoundEffects".localized)
-                SmallerToggleView(isToggled: false, toggled: $viewModel.showSpiesToEachOther, text: "SpyTeam".localized)
+                SmallerToggleView(toggled: $viewModel.settingsManager.soundEffects, text: "SoundEffects".localized)
+                SmallerToggleView(isToggled: false, toggled: $viewModel.settingsManager.showSpiesToEachOther, text: "SpyTeam".localized)
             }
             .padding(.horizontal)
             .padding(.bottom, 16)

@@ -24,7 +24,7 @@ struct RoleRevealView: View {
                 Button("Cancel", role: .cancel) {}
                 Button("Yes".localized, role: .destructive) {
                     viewModel.showingIntro = true
-                    viewModel.customPlayerNames = false
+                    viewModel.settingsManager.customPlayerNames = false
                     viewModel.gameState = .setup
                 }
             }
@@ -65,7 +65,7 @@ struct RoleRevealView: View {
             } else if viewModel.currentPlayerIndex < viewModel.players.count {
                 let player = viewModel.players[viewModel.currentPlayerIndex]
 
-                if viewModel.customPlayerNames && !showRole {
+                if viewModel.settingsManager.customPlayerNames && !showRole {
                     customNameView(viewModel: viewModel)
                 } else {
                     VStack(spacing: 20) {
@@ -87,7 +87,7 @@ struct RoleRevealView: View {
 
                         if showRole {
                             PrimaryButton(text: "NextPlayer".localized) {
-                                withAnimation(.easeInOut(duration: viewModel.customPlayerNames == true ? 0 : 0.3)) {
+                                withAnimation(.easeInOut(duration: viewModel.settingsManager.customPlayerNames == true ? 0 : 0.3)) {
                                     tapped = false
                                     showRole = false
                                     cardRotation = 0
@@ -145,7 +145,7 @@ struct RoleRevealView: View {
             Button(action: {
                 viewModel.updatePlayerNames()
                 viewModel.currentPlayerIndex = -1
-                viewModel.customPlayerNames = false
+                viewModel.settingsManager.customPlayerNames = false
             }) {
                 Text("Continue".localized)
                     .font(.custom("Geist", size: 20))

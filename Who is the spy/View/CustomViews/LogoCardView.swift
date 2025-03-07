@@ -10,7 +10,6 @@ import SwiftUI
 struct LogoCardView: View {
     var title: String
     var description: String?
-//    var logoFrame: CGFloat
     var logoHeight: CGFloat
     var logoWidth: CGFloat
     var logoPadding: CGFloat
